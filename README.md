@@ -1,16 +1,68 @@
-# React + Vite
+# Aplikasi Pembelajaran Matematika: Diskon
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi Pembelajaran Matematika: Diskon merupakan media pembelajaran berbasis web yang dirancang untuk membantu siswa memahami materi diskon dalam kehidupan sehari-hari.
 
-Currently, two official plugins are available:
+Aplikasi ini menyediakan materi pembelajaran, pretest, latihan soal, posttest, dan evaluasi hasil belajar agar siswa dapat memahami konsep diskon serta mengukur perkembangan belajarnya.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Fitur Aplikasi
 
-## React Compiler
+1. **Materi Pembelajaran**  
+   Berisi penjelasan tentang pengertian diskon, rumus diskon, dan contoh penerapannya.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. **Pretest**  
+   Digunakan untuk mengetahui pemahaman awal siswa sebelum mempelajari materi.
 
-## Expanding the ESLint configuration
+3. **Latihan Soal**  
+   Memberikan kesempatan kepada siswa untuk menguji pemahaman melalui soal latihan.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+4. **Posttest**  
+   Digunakan untuk mengukur pemahaman siswa setelah mempelajari materi.
+
+5. **Evaluasi**  
+   Menampilkan rekap nilai dan perkembangan hasil belajar siswa.
+
+6. **Penyimpanan Hasil Belajar**  
+   Menggunakan Supabase untuk menyimpan hasil belajar siswa.
+
+## Teknologi yang Digunakan
+
+- React.js
+- Vite
+- CSS
+- JavaScript
+- Supabase
+
+## Cara Menjalankan Aplikasi
+
+1. Clone repository ini.
+2. Masuk ke folder proyek.
+3. Instal dependensi:
+
+   ```bash
+   npm install
+   ```
+
+4. Buat file `.env` di folder utama dan isi konfigurasi Supabase:
+
+   ```env
+   VITE_SUPABASE_URL=URL_SUPABASE_KAMU
+   VITE_SUPABASE_ANON_KEY=KEY_SUPABASE_KAMU
+   ```
+
+5. Jalankan aplikasi:
+
+   ```bash
+   npm run dev
+   ```
+
+6. Buka alamat lokal yang muncul di terminal.
+
+## Tujuan Pengembangan
+
+Aplikasi ini dikembangkan sebagai media pembelajaran matematika untuk membantu siswa memahami konsep diskon secara lebih interaktif, menarik, dan mudah dipahami.
+
+---
+
+**Nama:** Adelilya Salsha  
+**NIM:** 2225250063  
+**Kelas:** 3B
