@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { supabase } from './supabase'
 import './App.css'
 
@@ -362,6 +362,46 @@ function QuestionScreen({
     </div>
   )
 }
+function MusikBelajar() {
+  
+  const audioRef = useRef(null)
+  const [musikAktif, setMusikAktif] = useState(false)
+
+  const toggleMusik = async () => {
+    if (!audioRef.current) return
+
+    if (musikAktif) {
+      audioRef.current.pause()
+      setMusikAktif(false)
+    } else {
+      try {
+        await audioRef.current.play()
+        setMusikAktif(true)
+      } catch (error) {
+        console.error('Musik belum bisa diputar:', error)
+      }
+    }
+  }
+
+  return (
+    <>
+      <audio
+        ref={audioRef}
+        src="/musik-belajar.mp3"
+        loop
+        onEnded={() => setMusikAktif(false)}
+      />
+
+      <button
+        onClick={toggleMusik}
+        className="tombol-musik"
+        type="button"
+      >
+        {musikAktif ? '🔊 Musik ON' : '🎵 Musik OFF'}
+      </button>
+    </>
+  )
+}
 
 function App() {
   const [halaman, setHalaman] = useState('identitas')
@@ -492,7 +532,10 @@ function App() {
   }
 
   return (
-    <div className="app">
+  <div className="app">
+    <MusikBelajar />
+    <h1>TES MUSIK MUNCUL</h1>
+
       <header className="main-header">
         <div className="header-brand">
           <div className="brand-icon">📚</div>

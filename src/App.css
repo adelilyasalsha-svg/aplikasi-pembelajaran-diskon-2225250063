@@ -1120,3 +1120,18 @@ button:disabled {
     grid-template-columns: 1fr;
   }
 }
+.tombol-musik {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 9999;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #8055c7;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
