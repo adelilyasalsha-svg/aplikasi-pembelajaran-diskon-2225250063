@@ -3,9 +3,11 @@ import { useState, useRef, useEffect } from 'react'
 import { supabase } from './supabase'
 import './App.css'
 
+
 const soal = [
   {
     pertanyaan: 'Apa yang dimaksud dengan diskon?',
+    ilustrasi: '🏷️',
     pilihan: [
       'Kenaikan harga barang',
       'Potongan harga barang',
@@ -17,24 +19,28 @@ const soal = [
   },
   {
     pertanyaan: 'Sebuah tas seharga Rp100.000 mendapat diskon 20%. Berapa potongan harganya?',
+    ilustrasi: '👜',
     pilihan: ['Rp10.000', 'Rp20.000', 'Rp30.000', 'Rp40.000'],
     jawaban: 1,
     pembahasan: 'Besar diskon = 20% × Rp100.000 = 20/100 × Rp100.000 = Rp20.000. Jadi, potongan harganya adalah Rp20.000.'
   },
   {
     pertanyaan: 'Jika harga baju Rp80.000 mendapat diskon 25%, berapa harga diskonnya?',
+    ilustrasi: '👕',
     pilihan: ['Rp10.000', 'Rp15.000', 'Rp20.000', 'Rp25.000'],
     jawaban: 2,
     pembahasan: 'Besar diskon = 25% × Rp80.000 = 25/100 × Rp80.000 = Rp20.000. Jadi, potongan harganya adalah Rp20.000.'
   },
   {
     pertanyaan: 'Sebuah sepatu seharga Rp200.000 mendapat diskon 10%. Berapa harga setelah diskon?',
+    ilustrasi: '👟',
     pilihan: ['Rp170.000', 'Rp180.000', 'Rp190.000', 'Rp200.000'],
     jawaban: 1,
     pembahasan: 'Diskon = 10% × Rp200.000 = Rp20.000. Harga setelah diskon = Rp200.000 − Rp20.000 = Rp180.000.'
   },
   {
     pertanyaan: 'Rumus untuk menghitung besar diskon adalah ...',
+    ilustrasi: '🧮',
     pilihan: [
       'Harga awal + persentase diskon',
       'Harga awal × persentase diskon',
@@ -49,18 +55,21 @@ const soal = [
 const soalLatihan = [
   {
     pertanyaan: 'Sebuah buku seharga Rp50.000 mendapat diskon 10%. Berapa besar diskonnya?',
+    ilustrasi: '📚',
     pilihan: ['Rp2.000', 'Rp5.000', 'Rp10.000', 'Rp15.000'],
     jawaban: 1,
     pembahasan: 'Diskon = 10% × Rp50.000 = 10/100 × Rp50.000 = Rp5.000. Jadi, besar diskonnya adalah Rp5.000.'
   },
   {
     pertanyaan: 'Harga sebuah tas Rp150.000 mendapat diskon 20%. Berapa harga setelah diskon?',
+    ilustrasi: '👜',
     pilihan: ['Rp100.000', 'Rp110.000', 'Rp120.000', 'Rp130.000'],
     jawaban: 2,
     pembahasan: 'Diskon = 20% × Rp150.000 = Rp30.000. Harga setelah diskon = Rp150.000 − Rp30.000 = Rp120.000.'
   },
   {
     pertanyaan: 'Sebuah baju seharga Rp80.000 mendapat diskon 25%. Berapa besar potongan harganya?',
+    ilustrasi: '👕',
     pilihan: ['Rp10.000', 'Rp20.000', 'Rp25.000', 'Rp30.000'],
     jawaban: 1,
     pembahasan: 'Diskon = 25% × Rp80.000 = 25/100 × Rp80.000 = Rp20.000. Jadi, potongan harganya adalah Rp20.000.'
@@ -70,6 +79,7 @@ const soalLatihan = [
 const soalPosttest = [
   {
     pertanyaan: 'Diskon merupakan istilah lain dari ...',
+    ilustrasi: '🏷️',
     pilihan: [
       'Tambahan harga',
       'Pajak pembelian',
@@ -81,29 +91,34 @@ const soalPosttest = [
   },
   {
     pertanyaan: 'Harga sebuah jam Rp120.000 mendapat diskon 10%. Berapa besar diskonnya?',
+    ilustrasi: '⌚',
     pilihan: ['Rp10.000', 'Rp12.000', 'Rp15.000', 'Rp20.000'],
     jawaban: 1,
     pembahasan: 'Diskon = 10% × Rp120.000 = 10/100 × Rp120.000 = Rp12.000.'
   },
   {
     pertanyaan: 'Sebuah sepatu seharga Rp250.000 mendapat diskon 20%. Berapa harga setelah diskon?',
+    ilustrasi: '👟',
     pilihan: ['Rp150.000', 'Rp200.000', 'Rp210.000', 'Rp220.000'],
     jawaban: 1,
     pembahasan: 'Diskon = 20% × Rp250.000 = Rp50.000. Harga setelah diskon = Rp250.000 − Rp50.000 = Rp200.000.'
   },
   {
     pertanyaan: 'Jika harga awal barang Rp100.000 dan potongan harganya Rp15.000, maka harga akhirnya adalah ...',
+    ilustrasi: '🛍️',
     pilihan: ['Rp75.000', 'Rp80.000', 'Rp90.000', 'Rp85.000'],
     jawaban: 3,
     pembahasan: 'Harga akhir = harga awal − potongan harga = Rp100.000 − Rp15.000 = Rp85.000.'
   },
   {
     pertanyaan: 'Sebuah barang seharga Rp200.000 mendapat diskon 15%. Berapa besar potongan harganya?',
+    ilustrasi: '🧮',
     pilihan: ['Rp15.000', 'Rp20.000', 'Rp30.000', 'Rp35.000'],
     jawaban: 2,
     pembahasan: 'Diskon = 15% × Rp200.000 = 15/100 × Rp200.000 = Rp30.000.'
   }
 ]
+
 
 function LearningIllustration() {
   return (
@@ -154,6 +169,7 @@ function LearningIllustration() {
   )
 }
 
+
 function QuestionScreen({
   judul,
   deskripsi,
@@ -168,6 +184,7 @@ function QuestionScreen({
 
   const soalAktif = daftarSoal[nomor]
   const sudahMenjawab = jawaban[nomor] !== undefined
+
   const semuaTerjawab = daftarSoal.every(
     (_, index) => jawaban[index] !== undefined
   )
@@ -220,6 +237,11 @@ function QuestionScreen({
               return (
                 <div className="material-card" key={index}>
                   <h3>Soal {index + 1}</h3>
+
+                  <div className="question-illustration">
+                    <span>{item.ilustrasi || '🏷️'}</span>
+                  </div>
+
                   <p><strong>{item.pertanyaan}</strong></p>
 
                   <p className={benar ? 'feedback-correct' : 'feedback-wrong'}>
@@ -277,13 +299,21 @@ function QuestionScreen({
           </div>
         </div>
 
-        <h3 className="question-title">{soalAktif.pertanyaan}</h3>
+        <div className="question-illustration">
+          <span>{soalAktif.ilustrasi || '🏷️'}</span>
+          <small>Ilustrasi Soal {nomor + 1}</small>
+        </div>
+
+        <h3 className="question-title">
+          {soalAktif.pertanyaan}
+        </h3>
 
         <div className="answer-list">
           {soalAktif.pilihan.map((pilihan, index) => {
             const dipilih = jawaban[nomor] === index
             const sudahAdaJawaban = sudahMenjawab
             const jawabanBenar = index === soalAktif.jawaban
+
             let kelas = 'answer-option'
 
             if (sudahAdaJawaban && jawabanBenar) {
