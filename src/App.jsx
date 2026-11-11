@@ -12,22 +12,26 @@ const soal = [
       'Pajak barang',
       'Harga asli barang'
     ],
-    jawaban: 1
+    jawaban: 1,
+    pembahasan: 'Diskon adalah potongan harga yang diberikan penjual kepada pembeli. Artinya, pembeli membayar barang dengan harga yang lebih rendah dari harga awal.'
   },
   {
     pertanyaan: 'Sebuah tas seharga Rp100.000 mendapat diskon 20%. Berapa potongan harganya?',
     pilihan: ['Rp10.000', 'Rp20.000', 'Rp30.000', 'Rp40.000'],
-    jawaban: 1
+    jawaban: 1,
+    pembahasan: 'Besar diskon = 20% × Rp100.000 = 20/100 × Rp100.000 = Rp20.000. Jadi, potongan harganya adalah Rp20.000.'
   },
   {
     pertanyaan: 'Jika harga baju Rp80.000 mendapat diskon 25%, berapa harga diskonnya?',
     pilihan: ['Rp10.000', 'Rp15.000', 'Rp20.000', 'Rp25.000'],
-    jawaban: 2
+    jawaban: 2,
+    pembahasan: 'Besar diskon = 25% × Rp80.000 = 25/100 × Rp80.000 = Rp20.000. Jadi, potongan harganya adalah Rp20.000.'
   },
   {
     pertanyaan: 'Sebuah sepatu seharga Rp200.000 mendapat diskon 10%. Berapa harga setelah diskon?',
     pilihan: ['Rp170.000', 'Rp180.000', 'Rp190.000', 'Rp200.000'],
-    jawaban: 1
+    jawaban: 1,
+    pembahasan: 'Diskon = 10% × Rp200.000 = Rp20.000. Harga setelah diskon = Rp200.000 − Rp20.000 = Rp180.000.'
   },
   {
     pertanyaan: 'Rumus untuk menghitung besar diskon adalah ...',
@@ -37,7 +41,8 @@ const soal = [
       'Harga awal − persentase diskon',
       'Harga awal ÷ persentase diskon'
     ],
-    jawaban: 1
+    jawaban: 1,
+    pembahasan: 'Rumus besar diskon adalah harga awal dikalikan persentase diskon. Persentase harus diubah menjadi desimal atau pecahan per seratus terlebih dahulu.'
   }
 ]
 
@@ -45,17 +50,20 @@ const soalLatihan = [
   {
     pertanyaan: 'Sebuah buku seharga Rp50.000 mendapat diskon 10%. Berapa besar diskonnya?',
     pilihan: ['Rp2.000', 'Rp5.000', 'Rp10.000', 'Rp15.000'],
-    jawaban: 1
+    jawaban: 1,
+    pembahasan: 'Diskon = 10% × Rp50.000 = 10/100 × Rp50.000 = Rp5.000. Jadi, besar diskonnya adalah Rp5.000.'
   },
   {
     pertanyaan: 'Harga sebuah tas Rp150.000 mendapat diskon 20%. Berapa harga setelah diskon?',
     pilihan: ['Rp100.000', 'Rp110.000', 'Rp120.000', 'Rp130.000'],
-    jawaban: 2
+    jawaban: 2,
+    pembahasan: 'Diskon = 20% × Rp150.000 = Rp30.000. Harga setelah diskon = Rp150.000 − Rp30.000 = Rp120.000.'
   },
   {
     pertanyaan: 'Sebuah baju seharga Rp80.000 mendapat diskon 25%. Berapa besar potongan harganya?',
     pilihan: ['Rp10.000', 'Rp20.000', 'Rp25.000', 'Rp30.000'],
-    jawaban: 1
+    jawaban: 1,
+    pembahasan: 'Diskon = 25% × Rp80.000 = 25/100 × Rp80.000 = Rp20.000. Jadi, potongan harganya adalah Rp20.000.'
   }
 ]
 
@@ -68,27 +76,32 @@ const soalPosttest = [
       'Potongan harga',
       'Keuntungan penjual'
     ],
-    jawaban: 2
+    jawaban: 2,
+    pembahasan: 'Diskon berarti potongan harga. Dengan adanya diskon, harga yang dibayar pembeli menjadi lebih murah daripada harga awal.'
   },
   {
     pertanyaan: 'Harga sebuah jam Rp120.000 mendapat diskon 10%. Berapa besar diskonnya?',
     pilihan: ['Rp10.000', 'Rp12.000', 'Rp15.000', 'Rp20.000'],
-    jawaban: 1
+    jawaban: 1,
+    pembahasan: 'Diskon = 10% × Rp120.000 = 10/100 × Rp120.000 = Rp12.000.'
   },
   {
     pertanyaan: 'Sebuah sepatu seharga Rp250.000 mendapat diskon 20%. Berapa harga setelah diskon?',
     pilihan: ['Rp150.000', 'Rp200.000', 'Rp210.000', 'Rp220.000'],
-    jawaban: 1
+    jawaban: 1,
+    pembahasan: 'Diskon = 20% × Rp250.000 = Rp50.000. Harga setelah diskon = Rp250.000 − Rp50.000 = Rp200.000.'
   },
   {
     pertanyaan: 'Jika harga awal barang Rp100.000 dan potongan harganya Rp15.000, maka harga akhirnya adalah ...',
     pilihan: ['Rp75.000', 'Rp80.000', 'Rp90.000', 'Rp85.000'],
-    jawaban: 3
+    jawaban: 3,
+    pembahasan: 'Harga akhir = harga awal − potongan harga = Rp100.000 − Rp15.000 = Rp85.000.'
   },
   {
     pertanyaan: 'Sebuah barang seharga Rp200.000 mendapat diskon 15%. Berapa besar potongan harganya?',
     pilihan: ['Rp15.000', 'Rp20.000', 'Rp30.000', 'Rp35.000'],
-    jawaban: 2
+    jawaban: 2,
+    pembahasan: 'Diskon = 15% × Rp200.000 = 15/100 × Rp200.000 = Rp30.000.'
   }
 ]
 
@@ -176,6 +189,10 @@ function QuestionScreen({
     return Math.round((benar / daftarSoal.length) * 100)
   }
 
+  const jumlahBenar = daftarSoal.filter(
+    (item, index) => jawaban[index] === item.jawaban
+  ).length
+
   if (hasil !== null) {
     return (
       <div className="quiz-container">
@@ -191,12 +208,40 @@ function QuestionScreen({
           </div>
 
           <p>
-            Jawaban benar:{' '}
-            {daftarSoal.filter(
-              (item, index) => jawaban[index] === item.jawaban
-            ).length}{' '}
-            dari {daftarSoal.length} soal.
+            Jawaban benar: {jumlahBenar} dari {daftarSoal.length} soal.
           </p>
+
+          <div className="review-list">
+            <h2>Pembahasan Semua Soal</h2>
+
+            {daftarSoal.map((item, index) => {
+              const benar = jawaban[index] === item.jawaban
+
+              return (
+                <div className="material-card" key={index}>
+                  <h3>Soal {index + 1}</h3>
+                  <p><strong>{item.pertanyaan}</strong></p>
+
+                  <p className={benar ? 'feedback-correct' : 'feedback-wrong'}>
+                    {benar ? '✓ Jawaban kamu benar' : '✗ Jawaban kamu belum tepat'}
+                  </p>
+
+                  <p>
+                    Jawaban kamu: {jawaban[index] !== undefined
+                      ? item.pilihan[jawaban[index]]
+                      : 'Belum dijawab'}
+                  </p>
+
+                  <p>
+                    Jawaban yang benar: <strong>{item.pilihan[item.jawaban]}</strong>
+                  </p>
+
+                  <p><strong>Pembahasan:</strong></p>
+                  <p>{item.pembahasan}</p>
+                </div>
+              )
+            })}
+          </div>
 
           <button className="primary-button full-button" onClick={kembali}>
             Kembali ke Menu
@@ -235,19 +280,56 @@ function QuestionScreen({
         <h3 className="question-title">{soalAktif.pertanyaan}</h3>
 
         <div className="answer-list">
-          {soalAktif.pilihan.map((pilihan, index) => (
-            <button
-              key={index}
-              className={`answer-option ${
-                jawaban[nomor] === index ? 'selected' : ''
-              }`}
-              onClick={() => pilihJawaban(index)}
-            >
-              <span>{String.fromCharCode(65 + index)}</span>
-              {pilihan}
-            </button>
-          ))}
+          {soalAktif.pilihan.map((pilihan, index) => {
+            const dipilih = jawaban[nomor] === index
+            const sudahAdaJawaban = sudahMenjawab
+            const jawabanBenar = index === soalAktif.jawaban
+            let kelas = 'answer-option'
+
+            if (sudahAdaJawaban && jawabanBenar) {
+              kelas += ' correct-answer'
+            } else if (sudahAdaJawaban && dipilih && !jawabanBenar) {
+              kelas += ' wrong-answer'
+            } else if (dipilih) {
+              kelas += ' selected'
+            }
+
+            return (
+              <button
+                key={index}
+                className={kelas}
+                onClick={() => pilihJawaban(index)}
+              >
+                <span>{String.fromCharCode(65 + index)}</span>
+                {pilihan}
+              </button>
+            )
+          })}
         </div>
+
+        {sudahMenjawab && (
+          <div className={`answer-feedback ${
+            jawaban[nomor] === soalAktif.jawaban
+              ? 'feedback-correct'
+              : 'feedback-wrong'
+          }`}>
+            <h3>
+              {jawaban[nomor] === soalAktif.jawaban
+                ? '✓ Jawaban kamu benar!'
+                : '✗ Jawaban kamu belum tepat.'}
+            </h3>
+
+            {jawaban[nomor] !== soalAktif.jawaban && (
+              <p>
+                Jawaban yang benar adalah:{' '}
+                <strong>{soalAktif.pilihan[soalAktif.jawaban]}</strong>
+              </p>
+            )}
+
+            <p><strong>Pembahasan:</strong></p>
+            <p>{soalAktif.pembahasan}</p>
+          </div>
+        )}
 
         <div className="quiz-navigation">
           <button
