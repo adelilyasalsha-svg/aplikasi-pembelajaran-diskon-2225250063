@@ -1161,3 +1161,689 @@ button:disabled {
   font-size: 13px;
   font-weight: 700;
 }
+
+/* Tampilan materi pembelajaran */
+.material-content {
+  width: 100%;
+}
+
+.material-content > h1 {
+  color: #6741a5;
+  margin-bottom: 12px;
+}
+
+.material-content > p {
+  line-height: 1.8;
+}
+
+.material-content .material-card {
+  padding: 25px;
+  margin: 22px 0;
+  border-radius: 22px;
+  background: #ffffff;
+  border: 1px solid #eee6fa;
+  box-shadow: 0 6px 20px rgba(95, 65, 140, 0.07);
+}
+
+.material-content .material-card h2 {
+  color: #7049a5;
+  margin-bottom: 15px;
+}
+
+.material-content .material-card h3 {
+  color: #8057b5;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.material-content .material-card p,
+.material-content .material-card li {
+  line-height: 1.8;
+  color: #55516a;
+}
+
+.material-content .material-card li {
+  margin-bottom: 7px;
+}
+
+.material-illustration {
+  min-height: 110px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f2eaff, #eaf3ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 52px;
+  gap: 15px;
+}
+
+.material-content .formula-box {
+  background: #f3edff;
+  color: #7049a5;
+  padding: 17px;
+  margin: 14px 0;
+  border-radius: 13px;
+  text-align: center;
+  font-weight: 800;
+  line-height: 1.8;
+  border-left: 4px solid #9368cc;
+}
+
+@media (max-width: 600px) {
+  .material-content .material-card {
+    padding: 18px;
+  }
+
+  .material-illustration {
+    min-height: 90px;
+    font-size: 42px;
+  }
+}
+.material-content {
+  text-align: left;
+}
+
+.material-content .material-card {
+  text-align: left;
+}
+
+.material-content .formula-box {
+  text-align: left;
+}
+/* Judul dan ikon materi */
+.material-content {
+  font-family: 'Nunito', sans-serif;
+  text-align: left;
+}
+
+.material-content .material-card {
+  font-family: 'Nunito', sans-serif;
+  text-align: left;
+  padding: 24px;
+}
+
+.material-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f3edff;
+  padding: 16px 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.material-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.material-heading h2 {
+  color: #7049a5;
+  font-family: 'Nunito', sans-serif;
+  font-size: 19px;
+  margin: 0;
+}
+
+.material-content p,
+.material-content li,
+.material-content h3 {
+  font-family: 'Nunito', sans-serif;
+}
+
+@media (max-width: 600px) {
+  .material-heading {
+    padding: 13px;
+    gap: 10px;
+  }
+
+  .material-heading h2 {
+    font-size: 16px;
+  }
+}
+
+/* FONT DAN TAMPILAN MATERI */
+.material-content {
+  font-family: 'Nunito', sans-serif !important;
+  color: #49415f;
+  text-align: left;
+}
+
+.material-content * {
+  font-family: 'Nunito', sans-serif !important;
+  box-sizing: border-box;
+}
+
+.material-content > h1 {
+  color: #6741a5;
+  font-size: 30px;
+  font-weight: 900;
+  margin: 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.material-content > p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #716a80;
+}
+
+.material-content .material-card {
+  background: #ffffff;
+  border: 1px solid #eee6fa;
+  border-radius: 20px;
+  padding: 25px;
+  margin: 24px 0;
+  box-shadow: 0 8px 24px rgba(103, 65, 165, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.material-content .material-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px 20px;
+  margin-bottom: 22px;
+  background: linear-gradient(120deg, #f0e8ff, #eaf3ff);
+  border-radius: 15px;
+}
+
+.material-content .material-icon {
+  font-size: 32px;
+}
+
+.material-content .material-heading h2 {
+  color: #6741a5;
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.material-content h3 {
+  color: #8057b5;
+  font-size: 17px;
+  font-weight: 800;
+  margin: 22px 0 10px;
+}
+
+.material-content p,
+.material-content li {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #625b70;
+}
+
+.material-content li {
+  margin-bottom: 7px;
+  padding-left: 4px;
+}
+
+.material-content strong {
+  color: #6741a5;
+  font-weight: 900;
+}
+
+.material-content .formula-box {
+  background: #f3edff;
+  color: #6741a5;
+  padding: 17px 20px;
+  margin: 16px 0;
+  border-radius: 14px;
+  border-left: 5px solid #9368cc;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.8;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .material-content > h1 {
+    font-size: 25px;
+  }
+
+  .material-content .material-card {
+    padding: 17px;
+  }
+
+  .material-content .material-heading {
+    padding: 13px;
+    gap: 10px;
+  }
+
+  .material-content .material-heading h2 {
+    font-size: 16px;
+  }
+
+  .material-content .material-icon {
+    font-size: 26px;
+  }
+}
+
+/* ===== PEMBAHASAN SOAL ===== */
+
+.answer-feedback {
+  margin-top: 25px;
+  padding: 20px 22px;
+  border-radius: 0;
+  background: linear-gradient(110deg, #f5f0ff, #faf8ff);
+  border-left: 5px solid #9670e5;
+  animation: explanationAppear 0.35s ease;
+}
+
+.explanation-area {
+  margin-top: 17px;
+  padding: 15px 18px;
+  background: rgba(255, 255, 255, 0.65);
+  border-left: 3px solid #b49aee;
+  border-radius: 0 13px 13px 0;
+}
+
+.explanation-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+
+.explanation-heading span {
+  font-size: 25px;
+}
+
+.explanation-heading h4 {
+  margin: 0;
+  color: #6747b5;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.explanation-area p {
+  margin: 0;
+  color: #625777;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.feedback-correct h3 {
+  color: #31966a;
+}
+
+.feedback-wrong h3 {
+  color: #d66c78;
+}
+
+@keyframes explanationAppear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 550px) {
+  .answer-feedback {
+    padding: 16px;
+  }
+
+  .explanation-area {
+    padding: 13px;
+  }
+}
+
+/* ===== ILUSTRASI SISWA SMP ===== */
+
+/* Menampilkan satu ilustrasi siswa SMP */
+.welcome-students {
+  position: relative;
+  width: 100%;
+  max-width: 490px;
+  height: auto;
+  margin: 25px auto 0;
+  border-radius: 24px;
+}
+
+.welcome-students img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+}
+
+.students-caption {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 17px;
+  background: white;
+  color: #805bc7;
+  border: 1px solid #eee6ff;
+  border-radius: 25px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+@keyframes studentFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@media (max-width: 550px) {
+  .welcome-students img {
+    height: 230px;
+  }
+}
+/* Memastikan ilustrasi lama tidak tampil di halaman identitas */
+
+/* ===== ILUSTRASI UTAMA HALAMAN IDENTITAS ===== */
+
+.welcome-content .shopping-illustration {
+  display: none !important;
+}
+
+.welcome-students {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 10px 0 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.welcome-students img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: 340px;
+  object-fit: contain;
+  object-position: center;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  animation: studentFloat 3s ease-in-out infinite;
+}
+
+.students-caption {
+  display: none;
+}
+
+@media (max-width: 550px) {
+  .welcome-students img {
+    height: 230px;
+  }
+}
+
+/* ===== HALAMAN IDENTITAS SATU KOLOM ===== */
+
+.welcome-section {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 25px !important;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 35px 20px;
+}
+
+.welcome-content {
+  width: 100%;
+  max-width: 750px;
+  text-align: center;
+}
+
+.welcome-content h1 {
+  text-align: center;
+}
+
+.welcome-description {
+  max-width: 650px;
+  margin: 15px auto;
+}
+
+.welcome-points {
+  justify-content: center;
+}
+
+.welcome-students {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+  margin: 20px auto;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.welcome-students img {
+  width: 100%;
+  max-width: 620px;
+  height: 350px;
+  object-fit: contain;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.welcome-form-card {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.students-caption {
+  margin-top: 10px;
+}
+
+@media (max-width: 550px) {
+  .welcome-section {
+    padding: 20px 15px;
+  }
+
+  .welcome-students img {
+    height: 250px;
+  }
+
+  .welcome-form-card {
+    width: 100%;
+  }
+}
+
+/* Tombol musik lebih kecil */
+
+.tombol-musik {
+  padding: 7px 13px !important;
+  font-size: 12px !important;
+  border-radius: 20px !important;
+  min-height: auto !important;
+  gap: 5px;
+}
+/* Tombol musik lebih kecil */
+.tombol-musik {
+  padding: 7px 13px !important;
+  font-size: 12px !important;
+  border-radius: 20px !important;
+  min-height: auto !important;
+  gap: 5px;
+}
+
+/* ===== ANIMASI SELURUH APLIKASI ===== */
+
+/* Gambar siswa */
+.welcome-students img {
+  animation: siswaMengambang 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes siswaMengambang {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Caption gambar */
+.students-caption {
+  animation: captionMuncul 2.5s ease-in-out infinite;
+}
+
+@keyframes captionMuncul {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Badge halaman awal */
+.welcome-badge {
+  animation: bintangBerkedip 2s ease-in-out infinite;
+}
+
+@keyframes bintangBerkedip {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+/* Kartu identitas */
+.welcome-form-card {
+  animation: kartuMuncul 0.8s ease-out;
+}
+
+/* Kartu dashboard */
+.menu-card {
+  animation: kartuMuncul 0.7s ease both;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Ikon dashboard: membesar sedikit di tempat */
+.menu-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  animation: ikonBerdenyut 2.5s ease-in-out infinite;
+}
+
+@keyframes ikonBerdenyut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+}
+
+/* Kartu materi */
+.material-card {
+  animation: kartuMuncul 0.7s ease both;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Ilustrasi soal: tetap di tempat */
+.question-illustration {
+  transform-origin: center;
+  animation: ilustrasiBerdenyut 3s ease-in-out infinite;
+}
+
+@keyframes ilustrasiBerdenyut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+/* Kotak rumus */
+.formula-box {
+  animation: kartuMuncul 0.8s ease both;
+}
+
+/* Animasi kemunculan */
+@keyframes kartuMuncul {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tombol */
+button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+/* Aksesibilitas */
+@media (prefers-reduced-motion: reduce) {
+  .welcome-students img,
+  .students-caption,
+  .welcome-badge,
+  .welcome-form-card,
+  .menu-card,
+  .menu-icon,
+  .material-card,
+  .question-illustration,
+  .formula-box,
+  button {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===== MEMPERBAIKI GAMBAR SISWA ===== */
+
+.welcome-students {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  margin: 20px auto;
+}
+
+.welcome-students img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100%;
+  max-width: 620px;
+  height: 350px;
+  object-fit: contain;
+  animation: siswaMengambang 3s ease-in-out infinite;
+}
+
+@media (max-width: 550px) {
+  .welcome-students img {
+    height: 250px;
+  }
+}
+
