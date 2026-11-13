@@ -1847,3 +1847,1460 @@ button:hover:not(:disabled) {
   }
 }
 
+.header-logout-button {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: #eee5ff;
+  color: #8054d8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header-logout-button:hover {
+  background: #8054d8;
+  color: white;
+  transform: scale(1.08);
+}
+
+/* ===== TEMA CERIA SELURUH APLIKASI ===== */
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background: linear-gradient(
+    135deg,
+    #f3eaff 0%,
+    #fff0f6 35%,
+    #fff8e5 70%,
+    #eaf8ff 100%
+  );
+}
+
+/* Semua halaman utama */
+.welcome-section,
+.dashboard-section,
+.material-section,
+.quiz-container,
+.calculator-section,
+.result-section {
+  background: transparent;
+}
+
+/* Halaman identitas */
+.welcome-section {
+  background:
+    radial-gradient(circle at 10% 15%, #ffe1ee 0, transparent 27%),
+    radial-gradient(circle at 90% 20%, #e2d5ff 0, transparent 30%),
+    radial-gradient(circle at 80% 90%, #fff0c2 0, transparent 28%),
+    linear-gradient(135deg, #f7efff, #fff5f8, #fffbea);
+}
+
+/* Judul halaman awal */
+.welcome-content h1 {
+  color: #7045bd;
+}
+
+.welcome-content h1 span {
+  color: #f078a5;
+}
+
+/* Deskripsi */
+.welcome-description {
+  color: #665a79;
+}
+
+/* Form identitas */
+.welcome-form-card {
+  background: linear-gradient(145deg, #ffffff, #fff0f7);
+  border: 2px solid #ead8ff;
+  box-shadow: 0 12px 30px rgba(128, 84, 216, 0.12);
+}
+
+/* Semua halaman materi dan latihan */
+.material-section,
+.quiz-container,
+.calculator-section {
+  background:
+    radial-gradient(circle at 0% 0%, #f0e7ff 0, transparent 25%),
+    radial-gradient(circle at 100% 100%, #fff0e5 0, transparent 25%),
+    transparent;
+}
+
+/* Kartu umum */
+.material-card,
+.quiz-card,
+.calculator-card {
+  background: linear-gradient(145deg, #ffffff, #fff8fc);
+  border: 1px solid #eadcff;
+  box-shadow: 0 9px 25px rgba(128, 84, 216, 0.09);
+}
+
+/* Judul bagian */
+.section-label {
+  color: #9560d9;
+}
+
+/* Input */
+input,
+select,
+textarea {
+  border-color: #dfd0f7;
+  background-color: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #a47be9;
+  box-shadow: 0 0 0 3px rgba(164, 123, 233, 0.15);
+}
+
+/* Pilihan jawaban */
+.answer-option {
+  background: #fff;
+  border: 1px solid #e5d9f8;
+}
+
+.answer-option:hover {
+  background: #f6efff;
+  border-color: #b99bea;
+}
+
+/* Footer dan header */
+header {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+  .welcome-section,
+  .material-section,
+  .quiz-container {
+    background-color: #fbf6ff;
+  }
+}
+
+/* ===== WARNA BARU HALAMAN LOGIN ===== */
+
+.welcome-section {
+  background:
+    radial-gradient(circle at 10% 10%, #ffd6e8 0%, transparent 30%),
+    radial-gradient(circle at 90% 15%, #d9ccff 0%, transparent 30%),
+    radial-gradient(circle at 80% 90%, #fff0b8 0%, transparent 35%),
+    linear-gradient(135deg, #fce7f3, #eee7ff, #e3f6ff) !important;
+  border-radius: 28px;
+  padding: 45px 30px !important;
+}
+
+.welcome-content {
+  background: transparent !important;
+}
+
+.welcome-content h1 {
+  color: #7041b8 !important;
+}
+
+.welcome-content h1 span {
+  color: #f05b9b !important;
+}
+
+.welcome-description {
+  color: #655477 !important;
+}
+
+.welcome-badge {
+  background: #ffffff !important;
+  color: #9256cc !important;
+  border: 1px solid #e6cafa !important;
+}
+
+.welcome-points > div {
+  background: #ffffff !important;
+  color: #74539a !important;
+  border: 1px solid #eadcf7 !important;
+  border-radius: 14px;
+  padding: 10px 14px;
+  margin-bottom: 9px;
+}
+
+.welcome-form-card {
+  background: linear-gradient(145deg, #ffffff, #fff0f7) !important;
+  border: 2px solid #e9d5ff !important;
+  border-radius: 25px !important;
+  box-shadow: 0 14px 35px rgba(130, 80, 180, 0.16) !important;
+}
+
+.form-icon {
+  background: #f4e6ff !important;
+  color: #9256cc !important;
+}
+
+.welcome-form-card h2 {
+  color: #7041b8 !important;
+}
+
+.welcome-form-card p {
+  color: #766487 !important;
+}
+
+.welcome-form-card label {
+  color: #7041b8 !important;
+}
+
+.welcome-form-card input {
+  background: #ffffff !important;
+  border: 1px solid #dfc9f5 !important;
+  border-radius: 12px !important;
+}
+
+.welcome-form-card input:focus {
+  border-color: #a875df !important;
+  box-shadow: 0 0 0 3px #eadcff !important;
+}
+
+.welcome-form-card .primary-button {
+  background: linear-gradient(100deg, #a66be0, #f17eaf) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.welcome-note {
+  color: #9864bd !important;
+}
+
+/* ===== TEMA PASTEL SOLID ===== */
+
+html,
+body,
+#root {
+  background: #F3EFFF !important;
+}
+
+/* Halaman login */
+.welcome-section {
+  background: #F3EFFF !important;
+  border-radius: 28px;
+}
+
+/* Judul dan teks */
+.welcome-content h1 {
+  color: #55436B !important;
+}
+
+.welcome-content h1 span {
+  color: #E987B2 !important;
+}
+
+.welcome-description {
+  color: #756582 !important;
+}
+
+/* Badge */
+.welcome-badge {
+  background: #FFF1C7 !important;
+  color: #80652B !important;
+  border: none !important;
+}
+
+/* Poin pembelajaran */
+.welcome-points > div {
+  background: #E5F4EA !important;
+  color: #52765D !important;
+  border: none !important;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+/* Kartu identitas */
+.welcome-form-card {
+  background: #FFE8F0 !important;
+  border: 2px solid #F7D1E0 !important;
+  border-radius: 25px !important;
+  box-shadow: 0 8px 24px rgba(120, 85, 120, 0.08) !important;
+}
+
+.welcome-form-card h2 {
+  color: #76517C !important;
+}
+
+.welcome-form-card p,
+.welcome-form-card label {
+  color: #755D78 !important;
+}
+
+/* Input */
+.welcome-form-card input {
+  background: #FFFFFF !important;
+  border: 1px solid #E8C8DC !important;
+  border-radius: 12px !important;
+}
+
+/* Tombol */
+.welcome-form-card .primary-button {
+  background: #B99AE8 !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 14px !important;
+}
+
+/* Catatan */
+.welcome-note {
+  color: #956A9C !important;
+}
+
+/* Kartu materi */
+.material-card,
+.result-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E8DDF5 !important;
+  box-shadow: 0 5px 18px rgba(100, 75, 120, 0.06) !important;
+}
+
+/* Semua tombol utama */
+.primary-button {
+  background: #B99AE8 !important;
+  color: #FFFFFF !important;
+}
+
+/* Header */
+header {
+  background: #FFFFFF !important;
+}
+
+/* ===== WARNA PASTEL CERIA HALAMAN DALAM ===== */
+
+/* Latar belakang seluruh aplikasi */
+.app {
+  background: #F1EAFE !important;
+}
+
+/* Header */
+.main-header {
+  background: #E5D9FA !important;
+  border-radius: 0 0 22px 22px;
+}
+
+.header-brand h2 {
+  color: #543B7A !important;
+}
+
+.header-user {
+  background: #FFF0F5 !important;
+  border: 1px solid #F4C9DC !important;
+}
+
+/* Dashboard */
+.dashboard-welcome {
+  background: #E5D9FA !important;
+  border: 2px solid #D2BDF2 !important;
+}
+
+.dashboard-welcome-text h1 {
+  color: #654394 !important;
+}
+
+.dashboard-welcome-text p {
+  color: #665578 !important;
+}
+
+/* Kartu menu dashboard */
+.menu-purple {
+  background: #DCCBFA !important;
+}
+
+.menu-yellow {
+  background: #FFE6A8 !important;
+}
+
+.menu-pink {
+  background: #FFD5E5 !important;
+}
+
+.menu-green {
+  background: #CDEED9 !important;
+}
+
+.menu-card {
+  border: 2px solid #FFFFFF !important;
+  box-shadow: 0 7px 18px rgba(91, 65, 130, 0.12) !important;
+}
+
+.menu-card h3 {
+  color: #543B72 !important;
+}
+
+.menu-card p {
+  color: #655675 !important;
+}
+
+/* Halaman materi */
+.material-section > h1,
+.material-content > h1 {
+  color: #654394 !important;
+}
+
+.material-card {
+  background: #FFF0F5 !important;
+  border: 2px solid #F5C9DC !important;
+  box-shadow: 0 7px 18px rgba(130, 75, 110, 0.10) !important;
+}
+
+.material-card:nth-of-type(even) {
+  background: #FFF3D5 !important;
+  border-color: #F5DDA2 !important;
+}
+
+.material-content .material-card {
+  background: #FFF0F5 !important;
+  border-color: #F5C9DC !important;
+}
+
+.material-content .material-heading {
+  background: #E5D9FA !important;
+}
+
+.material-content .material-heading h2 {
+  color: #654394 !important;
+}
+
+.material-content h3 {
+  color: #A34E83 !important;
+}
+
+.material-content p,
+.material-content li {
+  color: #554B62 !important;
+}
+
+/* Kotak rumus */
+.formula-box,
+.material-content .formula-box {
+  background: #DCD0F5 !important;
+  color: #553B83 !important;
+  border-left: 5px solid #936BCB !important;
+}
+
+/* Halaman kuis dan latihan */
+.quiz-card {
+  background: #FCE8F0 !important;
+  border: 2px solid #F2C8DA !important;
+  box-shadow: 0 8px 22px rgba(130, 75, 110, 0.10) !important;
+}
+
+.quiz-card h2,
+.question-title {
+  color: #674477 !important;
+}
+
+/* Progress kuis */
+.quiz-progress {
+  background: #E6DAFA !important;
+}
+
+.progress-info {
+  color: #604C78 !important;
+}
+
+.progress-info strong {
+  color: #7047A6 !important;
+}
+
+.progress-track {
+  background: #D0C0EA !important;
+}
+
+.progress-fill {
+  background: #9670D5 !important;
+}
+
+/* Pilihan jawaban */
+.answer-option {
+  background: #FFFFFF !important;
+  color: #554466 !important;
+  border: 2px solid #E2D4F0 !important;
+}
+
+.answer-option:hover {
+  background: #F1E8FF !important;
+  border-color: #A98ADD !important;
+}
+
+.answer-option.selected {
+  background: #DCCBFA !important;
+  border-color: #9670D5 !important;
+  color: #503477 !important;
+}
+
+/* Ilustrasi soal */
+.question-illustration {
+  background: #FFE6B8 !important;
+  border: 2px solid #F5D28C !important;
+}
+
+.question-illustration small {
+  color: #765323 !important;
+}
+
+/* Pembahasan jawaban */
+.answer-feedback {
+  background: #E5F4E8 !important;
+  border-left: 5px solid #63AD7A !important;
+}
+
+.explanation-area {
+  background: #F5FFF6 !important;
+  border-left-color: #70B986 !important;
+}
+
+/* Kalkulator */
+.calculator-section {
+  background: #E8F5EB !important;
+  border-radius: 24px;
+}
+
+.calculator-card {
+  background: #D5F0DE !important;
+  border: 2px solid #B6DFC3 !important;
+  box-shadow: 0 8px 22px rgba(65, 130, 85, 0.12) !important;
+}
+
+/* Halaman hasil */
+.result-quiz-card {
+  background: #FFF0D1 !important;
+}
+
+.result-card {
+  background: #FCE5EF !important;
+  border: 2px solid #F2C5D9 !important;
+}
+
+.result-card h1,
+.result-quiz-card h2 {
+  color: #704477 !important;
+}
+
+.result-summary div {
+  background: #E8DDF9 !important;
+}
+
+.result-summary strong {
+  color: #654394 !important;
+}
+
+.score-circle {
+  background: #9670D5 !important;
+  border-color: #DCCBFA !important;
+}
+
+/* Tombol utama */
+.primary-button {
+  background: #9670D5 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 5px 12px rgba(100, 65, 150, 0.20) !important;
+}
+
+.primary-button:hover:not(:disabled) {
+  background: #8058C1 !important;
+}
+
+/* Tombol kembali */
+.back-button {
+  background: #DCCBFA !important;
+  color: #553B83 !important;
+}
+
+/* Teks umum halaman dalam */
+.section-label {
+  color: #8754B8 !important;
+}
+
+.main-footer {
+  color: #705D85 !important;
+}
+
+/* ===== PENYESUAIAN DESAIN GAME AGAR SERAGAM ===== */
+
+.game-section {
+  font-family: 'Nunito', sans-serif;
+  color: #443263;
+}
+
+.game-section h1,
+.game-section h2,
+.game-section h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+.game-start-card,
+.game-play-shell,
+.game-step-card,
+.game-result-card,
+.game-finish-card {
+  border: 1px solid #eee8f7;
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 10px 30px #7053a512;
+}
+
+.game-play-shell {
+  padding: 30px;
+}
+
+.game-start-copy h1,
+.game-topbar h1,
+.game-section-title,
+.game-result-copy h2,
+.game-finish-card h2 {
+  color: #49356d;
+}
+
+.game-start-copy > p:not(.game-eyebrow),
+.game-result-copy p,
+.game-finish-card > p:not(.game-eyebrow) {
+  color: #7e748c;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.game-eyebrow {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #9670e5;
+}
+
+.game-howto span {
+  border: 1px solid #eee8f7;
+  border-radius: 15px;
+  background: #f8f5ff;
+  color: #7958c2;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.game-product-tile {
+  border: 2px solid #eee8f7;
+  border-radius: 20px;
+  background: #fcfaff;
+  color: #49356d;
+  font-family: 'Nunito', sans-serif;
+  box-shadow: 0 5px 18px #7053a508;
+}
+
+.game-product-tile:hover {
+  border-color: #bda9ed;
+  background: #f8f4ff;
+  box-shadow: 0 10px 24px #7053a51a;
+}
+
+.game-product-tile strong {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 17px;
+  color: #49356d;
+}
+
+.game-product-tile > span {
+  color: #805bc7;
+  font-size: 14px;
+}
+
+.game-product-tile small {
+  color: #9186a5;
+  font-size: 12px;
+}
+
+.game-step-card {
+  padding: 28px;
+}
+
+.game-section-title {
+  font-size: 25px;
+}
+
+.game-selected-product {
+  border: 1px solid #eee8f7;
+  border-radius: 20px;
+  background: #f8f5ff;
+}
+
+.game-selected-product h2 {
+  font-size: 22px;
+  color: #49356d;
+}
+
+.game-selected-product strong {
+  color: #805bc7;
+}
+
+.game-discount-tag {
+  background: #f0eaff;
+  color: #6747b5;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.game-coupon {
+  border: 2px solid #e6dcf5;
+  border-radius: 18px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  box-shadow: 0 5px 15px #7053a50a;
+}
+
+.game-coupon:hover {
+  border-color: #bda9ed;
+  box-shadow: 0 8px 20px #7053a51a;
+}
+
+.game-math-panel {
+  border: 1px solid #eee8f7;
+  border-radius: 20px;
+  background: #f8f5ff;
+  color: #726783;
+  font-family: 'Nunito', sans-serif;
+}
+
+.game-math-panel h3 {
+  color: #49356d;
+  font-size: 21px;
+}
+
+.game-answer {
+  min-height: 54px;
+  border: 2px solid #eee8f7;
+  border-radius: 15px;
+  background: #fcfaff;
+  color: #726783;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  transition: .2s ease;
+}
+
+.game-answer:hover {
+  border-color: #bda9ed;
+  background: #f8f4ff;
+  transform: translateY(-2px);
+}
+
+.game-answer.selected {
+  border-color: #9670e5;
+  background: #f0eaff;
+  color: #6747b5;
+}
+
+.game-main-button,
+.game-secondary-button {
+  border-radius: 14px;
+  padding: 13px 23px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.game-main-button {
+  background: linear-gradient(135deg, #9670e5, #805bd7);
+  box-shadow: 0 4px 0 #6747b5;
+}
+
+.game-secondary-button {
+  border: 1px solid #e8def7;
+  background: #f0eaff;
+  color: #6747b5;
+}
+
+.game-speech {
+  border: 1px solid #e8def7;
+  border-radius: 16px;
+  background: #f8f5ff;
+  color: #7958c2;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.game-score-pill {
+  border: 1px solid #f2dfa9;
+  border-radius: 14px;
+  background: #fff7e5;
+  color: #966c22;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.game-progress-track {
+  background: #e7def6;
+}
+
+.game-progress-track span {
+  background: linear-gradient(90deg, #b69bff, #805bd7);
+}
+
+.game-result-card {
+  padding: 28px;
+}
+
+.game-finish-card {
+  padding: 30px;
+}
+
+.game-final-points {
+  font-family: 'Fredoka', sans-serif;
+  color: #805bd7;
+}
+
+.game-cart-summary {
+  border: 1px solid #f2dfa9;
+  border-radius: 15px;
+  background: #fff7e5;
+  color: #966c22;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .game-play-shell {
+    padding: 17px;
+  }
+
+  .game-step-card,
+  .game-result-card,
+  .game-finish-card {
+    padding: 18px;
+  }
+
+  .game-section-title {
+    font-size: 21px;
+  }
+}
+
+/* =================================
+   PENYERAGAMAN GAME DAN KALKULATOR
+================================= */
+
+/* KALKULATOR */
+.calculator-section {
+  font-family: 'Nunito', sans-serif;
+}
+
+.calculator-section .material-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.calculator-section .material-content > h1 {
+  font-family: 'Fredoka', sans-serif;
+  color: #49356d;
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.calculator-section .material-intro {
+  color: #7e748c;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.calculator-section .material-card {
+  background: #fff;
+  border: 1px solid #eee8f7;
+  border-radius: 24px;
+  padding: 28px;
+  margin: 22px 0;
+  box-shadow: 0 8px 25px rgba(112, 83, 165, 0.08);
+}
+
+.calculator-section .material-card h2 {
+  font-family: 'Fredoka', sans-serif;
+  color: #6747b5;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.calculator-section label {
+  display: block;
+  color: #51436c;
+  font-weight: 800;
+  margin: 18px 0 9px;
+}
+
+.calculator-section input,
+.calculator-section select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 15px;
+  border: 1.5px solid #e5dcf4;
+  border-radius: 13px;
+  background: #fcfaff;
+  color: #443263;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  transition: .2s ease;
+}
+
+.calculator-section input:focus,
+.calculator-section select:focus {
+  border-color: #9670e5;
+  box-shadow: 0 0 0 3px rgba(150, 112, 229, .12);
+}
+
+.calculator-section .formula-box {
+  background: #f5f0ff;
+  border: 1px solid #e5dafa;
+  border-radius: 15px;
+  padding: 17px;
+  margin: 15px 0;
+  color: #6747b5;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+.calculator-section .primary-button {
+  margin-top: 15px;
+}
+
+/* GAME */
+.game-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: 'Nunito', sans-serif;
+  color: #443263;
+}
+
+.game-section h1,
+.game-section h2,
+.game-section h3 {
+  font-family: 'Fredoka', sans-serif;
+}
+
+.game-start-card,
+.game-play-shell,
+.game-step-card,
+.game-result-card,
+.game-finish-card {
+  background: #fff;
+  border: 1px solid #eee8f7;
+  border-radius: 26px;
+  box-shadow: 0 10px 30px rgba(112, 83, 165, .09);
+}
+
+.game-start-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+  padding: 30px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.game-cover-image {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.game-start-copy h1 {
+  color: #49356d;
+  font-size: 34px;
+  margin: 10px 0;
+}
+
+.game-start-copy > p:not(.game-eyebrow) {
+  color: #7e748c;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.game-eyebrow {
+  color: #9670e5;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.game-howto {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.game-howto span {
+  display: block;
+  padding: 12px 15px;
+  border: 1px solid #eee8f7;
+  border-radius: 14px;
+  background: #f8f5ff;
+  color: #7958c2;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.game-play-shell {
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.game-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.game-topbar h1 {
+  color: #49356d;
+  font-size: 29px;
+  margin: 5px 0;
+}
+
+.game-score-pill {
+  background: #fff5d9;
+  border: 1px solid #f5dfa1;
+  color: #987020;
+  padding: 11px 18px;
+  border-radius: 30px;
+  font-weight: 900;
+}
+
+.game-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 25px 0;
+  color: #7e748c;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.game-progress-track {
+  flex: 1;
+  height: 10px;
+  background: #eee8f7;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.game-progress-track span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #9670e5, #d5a7f5);
+  border-radius: 20px;
+  transition: width .3s ease;
+}
+
+.game-speech {
+  padding: 16px 20px;
+  background: #f5f0ff;
+  border: 1px solid #e8def8;
+  border-radius: 17px;
+  color: #6747b5;
+  font-weight: 800;
+  line-height: 1.7;
+  margin: 20px 0;
+}
+
+.game-section-title {
+  color: #49356d;
+  font-size: 24px;
+  margin: 25px 0 18px;
+}
+
+.game-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.game-product-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  padding: 18px 13px;
+  border: 2px solid #eee8f7;
+  border-radius: 20px;
+  background: #fcfaff;
+  color: #49356d;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.game-product-tile:hover {
+  transform: translateY(-5px);
+  border-color: #cbb6f2;
+  box-shadow: 0 9px 22px rgba(112, 83, 165, .12);
+}
+
+.game-product-tile img {
+  width: 100%;
+  height: 135px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.game-product-tile strong {
+  font-size: 15px;
+  text-align: center;
+}
+
+.game-product-tile > span {
+  color: #7958c2;
+  font-weight: 900;
+}
+
+.game-product-tile small {
+  color: #9186a5;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.game-step-card {
+  padding: 28px;
+  margin-top: 20px;
+}
+
+.game-selected-product {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px;
+  background: #f8f5ff;
+  border: 1px solid #eee8f7;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+
+.game-selected-product img {
+  width: 125px;
+  height: 115px;
+  object-fit: contain;
+}
+
+.game-selected-product span {
+  color: #9186a5;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.game-selected-product h2 {
+  color: #49356d;
+  margin: 7px 0;
+}
+
+.game-selected-product strong {
+  color: #7958c2;
+}
+
+.game-muted {
+  color: #7e748c;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.game-coupon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.game-coupon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 22px 12px;
+  border: 2px dashed #d9c9f5;
+  border-radius: 18px;
+  background: #f8f4ff;
+  color: #7958c2;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.game-coupon:hover {
+  transform: translateY(-4px);
+  background: #f0eaff;
+  border-color: #9670e5;
+}
+
+.game-coupon span {
+  font-size: 25px;
+}
+
+.game-coupon strong {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 28px;
+}
+
+.game-coupon small {
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.game-discount-tag {
+  display: inline-block;
+  padding: 7px 13px;
+  background: #ffe9f1;
+  color: #c35d87 !important;
+  border-radius: 20px;
+}
+
+.game-math-panel {
+  padding: 22px;
+  border: 1px solid #eee8f7;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.game-math-panel p {
+  color: #7e748c;
+  line-height: 1.8;
+}
+
+.game-math-panel p strong {
+  color: #6747b5;
+}
+
+.game-math-panel h3 {
+  color: #49356d;
+  margin: 22px 0 15px;
+}
+
+.game-answer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.game-answer {
+  padding: 15px;
+  border: 2px solid #eee8f7;
+  border-radius: 14px;
+  background: #fcfaff;
+  color: #6747b5;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.game-answer:hover,
+.game-answer.selected {
+  background: #f0eaff;
+  border-color: #9670e5;
+}
+
+.game-main-button,
+.game-secondary-button {
+  padding: 13px 21px;
+  border: none;
+  border-radius: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.game-main-button {
+  background: linear-gradient(135deg, #9670e5, #7958c2);
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(112, 83, 165, .18);
+}
+
+.game-main-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 20px rgba(112, 83, 165, .22);
+}
+
+.game-main-button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.game-secondary-button {
+  background: #f0eaff;
+  color: #6747b5;
+}
+
+.game-result-card {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  align-items: center;
+  gap: 25px;
+  padding: 28px;
+  margin-top: 20px;
+}
+
+.game-result-image img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.game-celebrate {
+  color: #9670e5;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.game-result-copy h2,
+.game-finish-card h2 {
+  color: #49356d;
+  font-size: 26px;
+}
+
+.game-result-copy p,
+.game-finish-card > p:not(.game-eyebrow) {
+  color: #7e748c;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.game-points-earned {
+  display: inline-block;
+  margin: 10px 0 18px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  background: #fff5d9;
+  color: #987020;
+  font-weight: 900;
+}
+
+.game-finish-card {
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.game-finish-card > img {
+  width: 100%;
+  max-width: 280px;
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.game-final-points {
+  color: #7958c2;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+  margin: 15px 0;
+}
+
+.game-final-points span {
+  font-size: 23px;
+  color: #a79ab8;
+}
+
+.game-cart-summary {
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 15px;
+  background: #f8f5ff;
+  color: #6747b5;
+}
+
+.game-finish-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* TAMPILAN HP */
+@media (max-width: 750px) {
+  .game-start-card {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .game-cover-image {
+    max-height: 240px;
+  }
+
+  .game-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .game-result-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .game-result-image img {
+    max-height: 170px;
+  }
+}
+
+@media (max-width: 500px) {
+  .game-play-shell {
+    padding: 17px;
+  }
+
+  .game-step-card,
+  .game-result-card,
+  .game-finish-card {
+    padding: 18px;
+  }
+
+  .game-topbar h1 {
+    font-size: 24px;
+  }
+
+  .game-section-title {
+    font-size: 21px;
+  }
+
+  .game-selected-product {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .game-selected-product img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .game-coupon-grid {
+    gap: 9px;
+  }
+
+  .game-coupon {
+    padding: 16px 8px;
+  }
+
+  .game-answer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator-section .material-card {
+    padding: 19px;
+  }
+
+  .calculator-section .material-content > h1 {
+    font-size: 28px;
+  }
+}

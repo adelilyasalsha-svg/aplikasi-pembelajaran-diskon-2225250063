@@ -359,6 +359,211 @@ function QuestionScreen({
   )
 }
 
+
+function GameScreen({ kembali }) {
+  const produkGame = [
+    { id: 'tas', nama: 'Tas Sekolah', harga: 100000, gambar: '/game-tas.png', deskripsi: 'Tas lucu untuk membawa buku.' },
+    { id: 'sepatu', nama: 'Sepatu Keren', harga: 120000, gambar: '/game-sepatu.png', deskripsi: 'Sepatu nyaman untuk beraktivitas.' },
+    { id: 'headphone', nama: 'Headphone', harga: 200000, gambar: '/game-headphone.png', deskripsi: 'Headphone untuk menemani belajar.' },
+    { id: 'boneka', nama: 'Boneka Beruang', harga: 100000, gambar: '/game-boneka.png', deskripsi: 'Boneka mungil yang menggemaskan.' }
+  ]
+  const kupon = [10, 20, 30]
+  const [tahap, setTahap] = useState('awal')
+  const [ronde, setRonde] = useState(0)
+  const [barang, setBarang] = useState(null)
+  const [diskon, setDiskon] = useState(null)
+  const [pilihan, setPilihan] = useState(null)
+  const [umpanBalik, setUmpanBalik] = useState('')
+  const [skor, setSkor] = useState(0)
+  const [keranjang, setKeranjang] = useState([])
+
+  const rupiah = (angka) => 'Rp' + angka.toLocaleString('id-ID')
+  const potongan = barang && diskon !== null ? barang.harga * diskon / 100 : 0
+  const hargaAkhir = barang ? barang.harga - potongan : 0
+  const opsiHarga = barang ? [
+    hargaAkhir,
+    hargaAkhir + 5000,
+    Math.max(0, hargaAkhir - 10000),
+    hargaAkhir + 15000
+  ].filter((nilai, indeks, semua) => semua.indexOf(nilai) === indeks).sort((a, b) => a - b) : []
+
+  const mulaiGame = () => {
+    setRonde(0)
+    setBarang(null)
+    setDiskon(null)
+    setPilihan(null)
+    setUmpanBalik('')
+    setSkor(0)
+    setKeranjang([])
+    setTahap('toko')
+  }
+
+  const pilihBarang = (item) => {
+    setBarang(item)
+    setDiskon(null)
+    setPilihan(null)
+    setUmpanBalik('')
+    setTahap('kupon')
+  }
+
+  const pilihKupon = (nilai) => {
+    setDiskon(nilai)
+    setPilihan(null)
+    setUmpanBalik('')
+    setTahap('hitung')
+  }
+
+  const periksaJawaban = () => {
+    if (pilihan === null) return
+    if (Number(pilihan) === hargaAkhir) {
+      setUmpanBalik(`Yeay, benar! Potongannya ${rupiah(potongan)}. Jadi ${rupiah(barang.harga)} − ${rupiah(potongan)} = ${rupiah(hargaAkhir)}.`)
+      setSkor((nilai) => nilai + 25)
+      setKeranjang((isi) => [...isi, { ...barang, diskon, hargaAkhir }])
+    } else {
+      setUmpanBalik(`Belum tepat, yuk lihat caranya. ${diskon}% × ${rupiah(barang.harga)} = ${rupiah(potongan)}. Harga akhir = ${rupiah(barang.harga)} − ${rupiah(potongan)} = ${rupiah(hargaAkhir)}.`)
+    }
+    setTahap('hasil')
+  }
+
+  const lanjut = () => {
+    if (ronde === produkGame.length - 1) {
+      setTahap('selesai')
+    } else {
+      setRonde((nilai) => nilai + 1)
+      setBarang(null)
+      setDiskon(null)
+      setPilihan(null)
+      setUmpanBalik('')
+      setTahap('toko')
+    }
+  }
+
+  return (
+    <section className="game-section">
+      <button className="back-button" onClick={kembali}>← Kembali ke Menu</button>
+
+      {tahap === 'awal' && (
+        <div className="game-start-card">
+          <img className="game-cover-image" src="/game-cover.png" alt="Ilustrasi permainan Misi Belanja Hemat di supermarket pastel" />
+          <div className="game-start-copy">
+            <p className="game-eyebrow">PETUALANGAN DI TOKO MINI</p>
+            <h1>Misi Belanja Hemat!</h1>
+            <p>Bantu Rina memilih barang, mengambil kupon diskon, lalu menghitung harga belanjaannya.</p>
+            <div className="game-howto">
+              <span>🛍️ Pilih barang</span>
+              <span>🎟️ Ambil kupon diskon</span>
+              <span>⭐ Kumpulkan 100 poin</span>
+            </div>
+            <button className="game-main-button" onClick={mulaiGame}>Mulai Petualangan <span>➜</span></button>
+          </div>
+        </div>
+      )}
+
+      {tahap !== 'awal' && (
+        <div className="game-play-shell">
+          <div className="game-topbar">
+            <div>
+              <p className="game-eyebrow">TOKO MINI RINA</p>
+              <h1>Misi Belanja Hemat</h1>
+            </div>
+            <div className="game-score-pill">⭐ {skor} poin</div>
+          </div>
+          <div className="game-progress-row">
+            <span>Misi {Math.min(ronde + 1, produkGame.length)} dari {produkGame.length}</span>
+            <div className="game-progress-track"><span style={{ width: `${((ronde + (tahap === 'selesai' ? 1 : 0)) / produkGame.length) * 100}%` }} /></div>
+            <span>🛒 {keranjang.length}</span>
+          </div>
+
+          {tahap === 'toko' && (
+            <>
+              <div className="game-speech">Hai! Pilih satu barang yang ingin kamu beli, ya!</div>
+              <h2 className="game-section-title">Barang lucu di toko hari ini</h2>
+              <div className="game-product-grid">
+                {produkGame.map((item) => (
+                  <button className="game-product-tile" key={item.id} onClick={() => pilihBarang(item)}>
+                    <img src={item.gambar} alt={item.nama} />
+                    <strong>{item.nama}</strong>
+                    <span>{rupiah(item.harga)}</span>
+                    <small>Pilih barang ini →</small>
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
+
+          {tahap === 'kupon' && barang && (
+            <div className="game-step-card">
+              <div className="game-selected-product">
+                <img src={barang.gambar} alt={barang.nama} />
+                <div><span>Barang pilihanmu</span><h2>{barang.nama}</h2><strong>{rupiah(barang.harga)}</strong></div>
+              </div>
+              <h2 className="game-section-title">Pilih kupon diskonmu!</h2>
+              <p className="game-muted">Pilih salah satu kupon untuk digunakan saat membayar.</p>
+              <div className="game-coupon-grid">
+                {kupon.map((nilai) => (
+                  <button key={nilai} className="game-coupon" onClick={() => pilihKupon(nilai)}>
+                    <span>🎟️</span><strong>{nilai}%</strong><small>DISKON</small>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {tahap === 'hitung' && barang && (
+            <div className="game-step-card">
+              <div className="game-selected-product">
+                <img src={barang.gambar} alt={barang.nama} />
+                <div><span>Kupon berhasil dipakai!</span><h2>{barang.nama}</h2><strong className="game-discount-tag">Diskon {diskon}%</strong></div>
+              </div>
+              <div className="game-math-panel">
+                <p>Harga awal: <strong>{rupiah(barang.harga)}</strong></p>
+                <p>Kupon diskon: <strong>{diskon}%</strong></p>
+                <h3>Berapa harga yang harus dibayar?</h3>
+                <div className="game-answer-grid">
+                  {opsiHarga.map((nilai) => (
+                    <button key={nilai} className={`game-answer ${pilihan === nilai ? 'selected' : ''}`} onClick={() => setPilihan(nilai)}>
+                      {rupiah(nilai)}
+                    </button>
+                  ))}
+                </div>
+                <button className="game-main-button" disabled={pilihan === null} onClick={periksaJawaban}>Cek Jawabanku ✓</button>
+              </div>
+            </div>
+          )}
+
+          {tahap === 'hasil' && barang && (
+            <div className="game-result-card">
+              <div className="game-result-image"><img src={barang.gambar} alt={barang.nama} /></div>
+              <div className="game-result-copy">
+                <div className="game-celebrate"> {Number(pilihan) === hargaAkhir ? '🎉 Hebat sekali!' : '🌷 Tetap semangat!'}</div>
+                <h2>{Number(pilihan) === hargaAkhir ? 'Belanja hemat berhasil!' : 'Yuk, pelajari caranya!'}</h2>
+                <p>{umpanBalik}</p>
+                {Number(pilihan) === hargaAkhir && <div className="game-points-earned">⭐ +25 poin</div>}
+                <button className="game-main-button" onClick={lanjut}>{ronde === produkGame.length - 1 ? 'Lihat Hasil Akhir' : 'Lanjut ke Misi Berikutnya'} ➜</button>
+              </div>
+            </div>
+          )}
+
+          {tahap === 'selesai' && (
+            <div className="game-finish-card">
+              <img src="/game-cover.png" alt="Ilustrasi Rina menyelesaikan misi belanja" />
+              <p className="game-eyebrow">PETUALANGAN SELESAI</p>
+              <h2>Kamu Hebat! 🎀</h2>
+              <div className="game-final-points">{skor}<span>/100</span></div>
+              <p>Kamu berhasil menyelesaikan semua misi belanja. Terus berlatih menghitung diskon, ya!</p>
+              <div className="game-cart-summary"><strong>Isi keranjang:</strong> {keranjang.length} barang berhasil dibeli</div>
+              <div className="game-finish-actions">
+                <button className="game-main-button" onClick={mulaiGame}>Main Lagi ↻</button>
+                <button className="game-secondary-button" onClick={kembali}>Kembali ke Menu</button>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </section>
+  )
+}
+
 function MusikBelajar({ hentikanMusik = false }) {
   const audioRef = useRef(null)
   const [musikAktif, setMusikAktif] = useState(false)
@@ -564,13 +769,35 @@ const [hargaAkhirInput, setHargaAkhirInput] = useState('')
           </div>
         </div>
 
-        {halaman !== 'identitas' && (
-          <div className="header-user">
-            <span>👤 {namaSiswa} · {kelasSiswa}</span>
-            <button onClick={gantiSiswa}>Ganti Siswa</button>
-          </div>
-        )}
-      </header>
+        
+{halaman !== 'identitas' && (
+  <div className="header-user">
+    <span>👤 {namaSiswa} · {kelasSiswa}</span>
+
+    <button
+      className="header-logout-button"
+      onClick={gantiSiswa}
+      title="Ganti Siswa"
+      aria-label="Ganti Siswa"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width="21"
+        height="21"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+        <path d="M16 17l5-5-5-5" />
+        <path d="M21 12H9" />
+      </svg>
+    </button>
+  </div>
+)}
+</header>
 
       <main className="main-content">
         
@@ -726,6 +953,13 @@ const [hargaAkhirInput, setHargaAkhirInput] = useState('')
         <h3>Evaluasi</h3>
         <p>Lihat rekap nilai dan perkembangan belajarmu.</p>
         <span className="menu-arrow">Lihat Evaluasi →</span>
+      </button>
+
+      <button className="menu-card menu-yellow" onClick={() => setHalaman('game')}>
+        <span className="menu-icon">🛍️</span>
+        <h3>Game: Misi Belanja Hemat</h3>
+        <p>Jelajahi toko mini, pilih kupon, dan kumpulkan poin!</p>
+        <span className="menu-arrow">Mainkan Game →</span>
       </button>
     </div>
   </section>
@@ -1072,7 +1306,7 @@ const [hargaAkhirInput, setHargaAkhirInput] = useState('')
 )}
 
 {halaman === 'kalkulator' && (
-  <section className="material-section">
+    <section className="material-section calculator-section">
     <button
       className="back-button"
       onClick={() => setHalaman('dashboard')}
@@ -1396,7 +1630,11 @@ const [hargaAkhirInput, setHargaAkhirInput] = useState('')
   </section>
 )}
 
-        {halaman === 'pretest' && (
+        {halaman === 'game' && (
+  <GameScreen kembali={() => setHalaman('dashboard')} />
+)}
+
+{halaman === 'pretest' && (
           <QuestionScreen
             judul="Pretest"
             deskripsi="Kerjakan soal berikut untuk mengetahui pemahaman awalmu."

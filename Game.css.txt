@@ -1,0 +1,298 @@
+
+/* ===== GAME INTERAKTIF: MISI BELANJA HEMAT ===== */
+.game-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 0 35px;
+}
+.game-start-card, .game-play-shell {
+  overflow: hidden;
+  border: 2px solid #eadcfb;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #fff8fc, #f4efff 55%, #fff7e9);
+  box-shadow: 0 12px 35px rgba(111, 77, 145, .12);
+}
+.game-cover-image {
+  display: block;
+  width: 100%;
+  max-height: 390px;
+  object-fit: cover;
+  object-position: top center;
+}
+.game-start-copy {
+  padding: 28px 34px 34px;
+  text-align: center;
+}
+.game-eyebrow {
+  margin: 0 0 7px;
+  color: #b16caa;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+.game-start-copy h1, .game-topbar h1 {
+  margin: 0;
+  color: #70449a;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+}
+.game-start-copy > p:not(.game-eyebrow) {
+  max-width: 650px;
+  margin: 12px auto 20px;
+  color: #75647e;
+  line-height: 1.7;
+}
+.game-howto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0 24px;
+}
+.game-howto span {
+  padding: 10px 15px;
+  border: 1px solid #ead8f6;
+  border-radius: 30px;
+  background: white;
+  color: #78538d;
+  font-weight: 700;
+}
+.game-main-button, .game-secondary-button {
+  border: 0;
+  border-radius: 18px;
+  padding: 14px 24px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s ease;
+}
+.game-main-button {
+  background: linear-gradient(135deg, #9b6be1, #7650c9);
+  color: white;
+  box-shadow: 0 5px 0 #6040a9;
+}
+.game-main-button:hover:not(:disabled) { transform: translateY(-2px); filter: brightness(1.04); }
+.game-main-button:disabled { opacity: .5; cursor: not-allowed; }
+.game-secondary-button {
+  background: #f5eafa;
+  color: #79518e;
+}
+.game-play-shell { padding: 26px; }
+.game-topbar, .game-progress-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.game-score-pill {
+  padding: 12px 18px;
+  border: 1px solid #f2d88c;
+  border-radius: 30px;
+  background: #fff3c9;
+  color: #8d6425;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.game-progress-row { margin: 22px 0 26px; color: #806c91; font-weight: 700; }
+.game-progress-track {
+  flex: 1;
+  height: 12px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e8ddf4;
+}
+.game-progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #f4a8d1, #9874e4);
+  transition: width .3s ease;
+}
+.game-speech {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 18px;
+  padding: 13px 20px;
+  border: 2px solid #f1c4df;
+  border-radius: 22px;
+  background: white;
+  color: #8a568c;
+  font-weight: 800;
+  text-align: center;
+}
+.game-section-title {
+  margin: 12px 0 18px;
+  color: #704a91;
+  text-align: center;
+}
+.game-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.game-product-tile {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px;
+  border: 2px solid #eadcf7;
+  border-radius: 22px;
+  background: white;
+  color: #684b7c;
+  cursor: pointer;
+  transition: .2s ease;
+}
+.game-product-tile:hover {
+  transform: translateY(-5px);
+  border-color: #c39ce9;
+  box-shadow: 0 10px 20px rgba(116, 79, 150, .13);
+}
+.game-product-tile img {
+  width: 100%;
+  height: 135px;
+  object-fit: contain;
+  border-radius: 15px;
+  background: #fff4fb;
+}
+.game-product-tile strong { margin-top: 12px; text-align: center; }
+.game-product-tile > span { margin: 6px 0; color: #a04f85; font-weight: 900; }
+.game-product-tile small { color: #8b71a0; font-weight: 700; }
+.game-step-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px;
+  border: 2px solid #eadcf7;
+  border-radius: 26px;
+  background: rgba(255,255,255,.88);
+}
+.game-selected-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 14px;
+  border-radius: 20px;
+  background: #fff3fa;
+}
+.game-selected-product img {
+  width: 150px;
+  height: 125px;
+  object-fit: contain;
+  border-radius: 16px;
+}
+.game-selected-product span, .game-muted { color: #947e9d; }
+.game-selected-product h2 { margin: 5px 0; color: #714c91; }
+.game-selected-product strong { color: #b24f8d; font-size: 1.2rem; }
+.game-discount-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #ffd7e9;
+}
+.game-muted { text-align: center; }
+.game-coupon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 22px;
+}
+.game-coupon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 20px 10px;
+  border: 2px dashed #d9b2e8;
+  border-radius: 20px;
+  background: #f7edff;
+  color: #8055a1;
+  cursor: pointer;
+  transition: .2s ease;
+}
+.game-coupon:nth-child(2) { background: #fff4d9; border-color: #f0d08b; color: #9a6b25; }
+.game-coupon:nth-child(3) { background: #ffeaf3; border-color: #f0b9d3; color: #a44f7d; }
+.game-coupon:hover { transform: translateY(-4px) scale(1.02); }
+.game-coupon span { font-size: 2rem; }
+.game-coupon strong { font-size: 2rem; }
+.game-coupon small { font-weight: 900; letter-spacing: 1px; }
+.game-math-panel {
+  max-width: 570px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+  background: #f7f1ff;
+  color: #735a87;
+}
+.game-math-panel p { display: flex; justify-content: space-between; gap: 10px; }
+.game-math-panel h3 { margin: 22px 0 15px; color: #6e4991; text-align: center; }
+.game-answer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.game-answer {
+  padding: 13px 8px;
+  border: 2px solid #e2d2f2;
+  border-radius: 14px;
+  background: white;
+  color: #73558a;
+  font-weight: 800;
+  cursor: pointer;
+}
+.game-answer.selected { border-color: #9a70d5; background: #eadfff; color: #65409c; }
+.game-math-panel > .game-main-button { display: block; margin: 0 auto; }
+.game-result-card {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  border: 2px solid #eadcf7;
+  border-radius: 26px;
+  background: white;
+}
+.game-result-image img { width: 180px; height: 170px; object-fit: contain; border-radius: 20px; background: #fff3fa; }
+.game-celebrate { color: #c16ba7; font-size: 1.2rem; font-weight: 900; }
+.game-result-copy h2 { color: #704a91; }
+.game-result-copy p { color: #75647e; line-height: 1.7; }
+.game-points-earned { margin: 14px 0; color: #bd8a25; font-size: 1.2rem; font-weight: 900; }
+.game-finish-card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 25px;
+  border: 2px solid #eadcf7;
+  border-radius: 28px;
+  background: white;
+  text-align: center;
+}
+.game-finish-card > img { width: 100%; max-height: 230px; object-fit: cover; object-position: top; border-radius: 20px; }
+.game-finish-card h2 { color: #744a9a; font-size: 2rem; }
+.game-final-points { color: #8c61cf; font-size: 4rem; font-weight: 900; }
+.game-final-points span { color: #a58bb9; font-size: 1.5rem; }
+.game-finish-card > p:not(.game-eyebrow) { color: #75647e; line-height: 1.7; }
+.game-cart-summary { margin: 18px 0; padding: 13px; border-radius: 15px; background: #fff4d9; color: #8b682c; }
+.game-finish-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 760px) {
+  .game-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .game-play-shell { padding: 16px; }
+  .game-topbar { align-items: flex-start; }
+  .game-topbar h1 { font-size: 1.5rem; }
+}
+@media (max-width: 520px) {
+  .game-start-copy { padding: 20px 16px 25px; }
+  .game-cover-image { max-height: 230px; }
+  .game-product-grid { gap: 10px; }
+  .game-product-tile { padding: 9px; }
+  .game-product-tile img { height: 105px; }
+  .game-selected-product, .game-result-card { flex-direction: column; text-align: center; }
+  .game-selected-product img { width: 130px; height: 110px; }
+  .game-result-image img { width: 150px; height: 130px; }
+  .game-progress-row { font-size: .82rem; gap: 8px; }
+  .game-coupon-grid { gap: 8px; }
+  .game-coupon { padding: 15px 5px; }
+  .game-answer-grid { grid-template-columns: 1fr; }
+}
