@@ -3599,3 +3599,261 @@ body,
 .app {
   background: #F7F4FC !important;
 }
+
+/* ==========================================
+   KALKULATOR DISKON - PURPLE CANDY
+========================================== */
+
+.calculator-section {
+  background: transparent !important;
+  padding: 30px 20px !important;
+}
+
+.calculator-section .material-content {
+  width: 100%;
+  max-width: 950px;
+  margin: 25px auto;
+  padding: 32px !important;
+  background: #FFFFFF !important;
+  border: 2px solid #E8D9FA !important;
+  border-radius: 26px !important;
+  box-shadow: 0 8px 25px rgba(101, 64, 165, 0.09);
+}
+
+/* JUDUL */
+.calculator-section .section-label {
+  color: #9163CB !important;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.calculator-section h1 {
+  color: #6540A5 !important;
+  font-size: clamp(27px, 4vw, 36px);
+  font-weight: 800;
+  margin: 8px 0 12px;
+}
+
+.calculator-section .material-intro {
+  color: #766B88 !important;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+/* KARTU KALKULATOR */
+.calculator-section .material-card {
+  background: #F8F4FE !important;
+  border: 2px solid #E5D6FA !important;
+  border-radius: 22px !important;
+  padding: 25px !important;
+  margin: 22px 0 !important;
+  box-shadow: 0 5px 15px rgba(101, 64, 165, 0.06);
+}
+
+/* KARTU INPUT */
+.calculator-section .material-card:nth-of-type(2) {
+  background: #FFF4F8 !important;
+  border-color: #F5C9DC !important;
+}
+
+/* JUDUL KARTU */
+.calculator-section .material-card h2 {
+  color: #6540A5 !important;
+  font-size: 21px;
+  font-weight: 800;
+  margin: 0 0 22px;
+}
+
+.calculator-section .material-card h3 {
+  color: #7049AE !important;
+  font-size: 19px;
+  line-height: 1.6;
+  margin: 20px 0 12px;
+}
+
+/* LABEL INPUT */
+.calculator-section label {
+  display: block;
+  color: #55436F !important;
+  font-size: 15px;
+  font-weight: 800;
+  margin: 18px 0 9px;
+}
+
+/* SELECT DAN INPUT */
+.calculator-section select,
+.calculator-section input {
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 16px;
+  border: 2px solid #DCCBFA !important;
+  border-radius: 13px !important;
+  background: #FFFFFF !important;
+  color: #443263 !important;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+}
+
+.calculator-section select:focus,
+.calculator-section input:focus {
+  border-color: #9569D3 !important;
+  box-shadow: 0 0 0 4px rgba(139, 91, 214, 0.12);
+}
+
+/* TOMBOL HITUNG */
+.calculator-section .primary-button {
+  display: block;
+  width: 100%;
+  min-height: 54px;
+  margin: 25px 0;
+  padding: 14px 20px;
+  border: none !important;
+  border-radius: 15px !important;
+  background: #8254C6 !important;
+  color: #FFFFFF !important;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 6px 15px rgba(101, 64, 165, 0.18);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.calculator-section .primary-button:hover {
+  background: #6540A5 !important;
+  transform: translateY(-2px);
+}
+
+/* LANGKAH PENYELESAIAN */
+.calculator-section .material-card p {
+  color: #55436F !important;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 9px 0;
+}
+
+.calculator-section .formula-box {
+  background: #F0E7FC !important;
+  border: 1px solid #DCCBFA;
+  border-radius: 13px;
+  padding: 16px;
+  margin: 13px 0;
+  color: #6540A5 !important;
+  font-weight: 800;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* TOMBOL KEMBALI DAN RESET */
+.calculator-section .back-button {
+  border-radius: 13px !important;
+  padding: 12px 20px;
+  font-family: inherit;
+  font-weight: 800;
+  background: #EDE3FC !important;
+  color: #6540A5 !important;
+  border: 1px solid #DCCBFA !important;
+  cursor: pointer;
+}
+
+.calculator-section .back-button:hover {
+  background: #DCCBFA !important;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+  .calculator-section {
+    padding: 18px 12px !important;
+  }
+
+  .calculator-section .material-content {
+    padding: 19px !important;
+    border-radius: 20px !important;
+  }
+
+  .calculator-section .material-card {
+    padding: 18px !important;
+    border-radius: 17px !important;
+  }
+
+  .calculator-section .material-card h2 {
+    font-size: 18px;
+  }
+
+  .calculator-section .material-card h3 {
+    font-size: 17px;
+  }
+
+  .calculator-section .material-card p {
+    font-size: 14px;
+  }
+
+  .calculator-section .primary-button {
+    font-size: 14px;
+  }
+}
+
+/* PEMBAHASAN LANGKAH DEMI LANGKAH */
+
+.solution-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.solution-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 16px;
+  background: #F8F4FE;
+  border: 1px solid #E5D6FA;
+  border-radius: 16px;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background: #8254C6;
+  color: white;
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.step-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.step-content h5 {
+  color: #6540A5;
+  font-size: 15px;
+  margin: 3px 0 8px;
+}
+
+.step-content p {
+  color: #55436F;
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-line;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .solution-step {
+    padding: 13px;
+    gap: 10px;
+  }
+}

@@ -48,41 +48,77 @@ const soal = [
   }
 ]
 
+
 const soalLatihan = [
   {
     pertanyaan: 'Sebuah jaket memiliki harga awal Rp240.000 dan harga setelah diskon Rp180.000. Berapa persentase diskonnya?',
     ilustrasi: '🧥',
     pilihan: ['20%', '25%', '30%', '35%'],
     jawaban: 1,
-    pembahasan: 'Potongan = Rp240.000 − Rp180.000 = Rp60.000. Persentase diskon = (Rp60.000 / Rp240.000) × 100% = 25%.'
+    pembahasan: 'Potongan = Rp240.000 − Rp180.000 = Rp60.000. Persentase diskon = (Rp60.000 / Rp240.000) × 100% = 25%.',
+    langkah: [
+      { judul: 'Diketahui', isi: 'Harga awal = Rp240.000\nHarga setelah diskon = Rp180.000' },
+      { judul: 'Ditanya', isi: 'Berapa persentase diskonnya?' },
+      { judul: 'Hitung potongan harga', isi: 'Rp240.000 − Rp180.000 = Rp60.000' },
+      { judul: 'Hitung persentase diskon', isi: '(Rp60.000 / Rp240.000) × 100% = 25%' },
+      { judul: 'Kesimpulan', isi: 'Persentase diskon jaket adalah 25%.' }
+    ]
   },
   {
     pertanyaan: 'Sebuah sepatu dijual dengan harga Rp160.000 setelah mendapat diskon 20%. Berapa harga awal sepatu tersebut?',
     ilustrasi: '👟',
     pilihan: ['Rp180.000', 'Rp190.000', 'Rp200.000', 'Rp220.000'],
     jawaban: 2,
-    pembahasan: 'Harga awal = harga akhir / (1 − diskon/100) = Rp160.000 / (1 − 20/100) = Rp160.000 / 0,8 = Rp200.000.'
+    pembahasan: 'Harga awal = Rp160.000 / 0,8 = Rp200.000.',
+    langkah: [
+      { judul: 'Diketahui', isi: 'Harga setelah diskon = Rp160.000\nDiskon = 20%' },
+      { judul: 'Ditanya', isi: 'Berapa harga awal sepatu?' },
+      { judul: 'Hitung persentase harga setelah diskon', isi: '100% − 20% = 80% = 0,8' },
+      { judul: 'Hitung harga awal', isi: 'Rp160.000 ÷ 0,8 = Rp200.000' },
+      { judul: 'Kesimpulan', isi: 'Harga awal sepatu adalah Rp200.000.' }
+    ]
   },
   {
     pertanyaan: 'Sebuah tas seharga Rp300.000 mendapat diskon 15%. Berapa besar potongan harganya?',
     ilustrasi: '👜',
     pilihan: ['Rp30.000', 'Rp35.000', 'Rp45.000', 'Rp50.000'],
     jawaban: 2,
-    pembahasan: 'Potongan = 15/100 × Rp300.000 = Rp45.000.'
+    pembahasan: 'Potongan = 15/100 × Rp300.000 = Rp45.000.',
+    langkah: [
+      { judul: 'Diketahui', isi: 'Harga awal = Rp300.000\nDiskon = 15%' },
+      { judul: 'Ditanya', isi: 'Berapa besar potongan harga?' },
+      { judul: 'Tentukan rumus', isi: 'Potongan = (Diskon / 100) × Harga awal' },
+      { judul: 'Masukkan angka', isi: '(15 / 100) × Rp300.000 = Rp45.000' },
+      { judul: 'Kesimpulan', isi: 'Besar potongan harga tas adalah Rp45.000.' }
+    ]
   },
   {
     pertanyaan: 'Harga sebuah buku setelah diskon 10% adalah Rp90.000. Berapa harga awal buku tersebut?',
     ilustrasi: '📚',
     pilihan: ['Rp95.000', 'Rp100.000', 'Rp105.000', 'Rp110.000'],
     jawaban: 1,
-    pembahasan: 'Harga awal = Rp90.000 / (1 − 10/100) = Rp90.000 / 0,9 = Rp100.000.'
+    pembahasan: 'Harga awal = Rp90.000 / 0,9 = Rp100.000.',
+    langkah: [
+      { judul: 'Diketahui', isi: 'Harga setelah diskon = Rp90.000\nDiskon = 10%' },
+      { judul: 'Ditanya', isi: 'Berapa harga awal buku?' },
+      { judul: 'Hitung persentase harga setelah diskon', isi: '100% − 10% = 90% = 0,9' },
+      { judul: 'Hitung harga awal', isi: 'Rp90.000 ÷ 0,9 = Rp100.000' },
+      { judul: 'Kesimpulan', isi: 'Harga awal buku adalah Rp100.000.' }
+    ]
   },
   {
     pertanyaan: 'Sebuah jam memiliki harga awal Rp400.000 dan mendapat diskon 25%. Berapa harga yang harus dibayar?',
     ilustrasi: '⌚',
     pilihan: ['Rp250.000', 'Rp280.000', 'Rp300.000', 'Rp350.000'],
     jawaban: 2,
-    pembahasan: 'Potongan = 25/100 × Rp400.000 = Rp100.000. Harga akhir = Rp400.000 − Rp100.000 = Rp300.000.'
+    pembahasan: 'Potongan = 25/100 × Rp400.000 = Rp100.000. Harga akhir = Rp400.000 − Rp100.000 = Rp300.000.',
+    langkah: [
+      { judul: 'Diketahui', isi: 'Harga awal = Rp400.000\nDiskon = 25%' },
+      { judul: 'Ditanya', isi: 'Berapa harga yang harus dibayar?' },
+      { judul: 'Hitung potongan harga', isi: '(25 / 100) × Rp400.000 = Rp100.000' },
+      { judul: 'Hitung harga akhir', isi: 'Rp400.000 − Rp100.000 = Rp300.000' },
+      { judul: 'Kesimpulan', isi: 'Harga yang harus dibayar adalah Rp300.000.' }
+    ]
   }
 ]
 
@@ -123,6 +159,7 @@ const soalPosttest = [
     pembahasan: 'Harga awal = Rp180.000 / 0,9 = Rp200.000. Potongan = Rp200.000 − Rp180.000 = Rp20.000.'
   }
 ]
+
 
 
 
@@ -201,25 +238,47 @@ function QuestionScreen({
                   <p><strong>{item.pertanyaan}</strong></p>
 
                   <p className={benar ? 'feedback-correct' : 'feedback-wrong'}>
-                    {benar ? '✓ Jawaban kamu benar' : '✗ Jawaban kamu belum tepat'}
+                    {benar
+                      ? '✓ Jawaban kamu benar'
+                      : '✗ Jawaban kamu belum tepat'}
                   </p>
 
                   <p>
-                    Jawaban kamu: {jawaban[index] !== undefined
+                    Jawaban kamu:{' '}
+                    {jawaban[index] !== undefined
                       ? item.pilihan[jawaban[index]]
                       : 'Belum dijawab'}
                   </p>
 
                   <p>
-                    Jawaban yang benar: <strong>{item.pilihan[item.jawaban]}</strong>
+                    Jawaban yang benar:{' '}
+                    <strong>{item.pilihan[item.jawaban]}</strong>
                   </p>
 
                   <div className="explanation-area">
                     <div className="explanation-heading">
                       <span>💡</span>
-                      <h4>Pembahasan</h4>
+                      <h4>Pembahasan Langkah demi Langkah</h4>
                     </div>
-                    <p>{item.pembahasan}</p>
+
+                    {item.langkah ? (
+                      <div className="solution-steps">
+                        {item.langkah.map((step, stepIndex) => (
+                          <div className="solution-step" key={stepIndex}>
+                            <div className="step-number">
+                              {stepIndex + 1}
+                            </div>
+
+                            <div className="step-content">
+                              <h5>{step.judul}</h5>
+                              <p>{step.isi}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p>{item.pembahasan}</p>
+                    )}
                   </div>
                 </div>
               )
@@ -290,6 +349,7 @@ function QuestionScreen({
                 key={index}
                 className={kelas}
                 onClick={() => pilihJawaban(index)}
+                disabled={sudahAdaJawaban}
               >
                 <span>{String.fromCharCode(65 + index)}</span>
                 {pilihan}
@@ -299,11 +359,13 @@ function QuestionScreen({
         </div>
 
         {sudahMenjawab && (
-          <div className={`answer-feedback ${
-            jawaban[nomor] === soalAktif.jawaban
-              ? 'feedback-correct'
-              : 'feedback-wrong'
-          }`}>
+          <div
+            className={`answer-feedback ${
+              jawaban[nomor] === soalAktif.jawaban
+                ? 'feedback-correct'
+                : 'feedback-wrong'
+            }`}
+          >
             <h3>
               {jawaban[nomor] === soalAktif.jawaban
                 ? '✓ Jawaban kamu benar!'
@@ -320,9 +382,25 @@ function QuestionScreen({
             <div className="explanation-area">
               <div className="explanation-heading">
                 <span>💡</span>
-                <h4>Pembahasan</h4>
+                <h4>Pembahasan Langkah demi Langkah</h4>
               </div>
-              <p>{soalAktif.pembahasan}</p>
+
+              {soalAktif.langkah ? (
+                <div className="solution-steps">
+                  {soalAktif.langkah.map((step, index) => (
+                    <div className="solution-step" key={index}>
+                      <div className="step-number">{index + 1}</div>
+
+                      <div className="step-content">
+                        <h5>{step.judul}</h5>
+                        <p>{step.isi}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p>{soalAktif.pembahasan}</p>
+              )}
             </div>
           </div>
         )}
@@ -358,6 +436,7 @@ function QuestionScreen({
     </div>
   )
 }
+
 
 
 function GameScreen({ kembali }) {
