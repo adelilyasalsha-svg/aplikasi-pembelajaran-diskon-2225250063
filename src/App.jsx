@@ -852,12 +852,12 @@ const [hargaAkhirInput, setHargaAkhirInput] = useState('')
   />
       <header className="main-header">
         <div className="header-brand">
-          <div className="brand-icon">📚</div>
-          <div>
-            <h2>Belajar Diskon</h2>
-            <p>MEDIA PEMBELAJARAN MATEMATIKA</p>
-          </div>
-        </div>
+  <div className="brand-icon">📚</div>
+  <div>
+    <h2>DISKOMAT</h2>
+    <p>DISKON MATEMATIKA</p>
+  </div>
+</div>
 
         
 {halaman !== 'identitas' && (
@@ -1403,18 +1403,23 @@ const [hargaAkhirInput, setHargaAkhirInput] = useState('')
       </div>
     </div>
 
-    <button className="primary-button" onClick={() => setHalaman('pretest')}>
-      <div className="material-card" style={{ marginTop: 24 }}>
-  <h3>Asisten Belajar Diskon 🤖</h3>
-  <p>
-    Masih bingung dengan materi diskon?
-    Tanyakan konsep, rumus, atau contoh perhitungan di sini.
-  </p>
 
-  <AsistenBelajar mode="belajar" />
-</div>
-      Mulai Pretest →
-    </button>
+      <div className="material-card material-assistant-card">
+        <h3>Asisten Belajar Diskon 🤖</h3>
+        <p>
+          Masih bingung dengan materi diskon?
+          Tanyakan konsep, rumus, atau contoh perhitungan di sini.
+        </p>
+
+        <AsistenBelajar mode="belajar" />
+      </div>
+
+      <button
+        className="primary-button"
+        onClick={() => setHalaman('pretest')}
+      >
+        Mulai Pretest →
+      </button>
   </section>
 )}
 

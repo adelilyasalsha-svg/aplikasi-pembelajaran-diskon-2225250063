@@ -5027,3 +5027,688 @@ h3,
     gap: 10px;
   }
 }
+
+/* ==========================================
+   PERAPIAN SPACING SELURUH APLIKASI
+   ========================================== */
+
+/* Dasar: mencegah isi melewati batas kartu */
+.main-content,
+.material-content,
+.material-card,
+.quiz-card,
+.result-card,
+.game-section,
+.assistant-chat,
+.welcome-section,
+.dashboard-section {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.material-card *,
+.assistant-chat *,
+.game-section * {
+  box-sizing: border-box;
+}
+
+/* LOGIN */
+.welcome-section {
+  padding: 28px !important;
+}
+
+.welcome-content {
+  min-width: 0;
+}
+
+.welcome-form-card {
+  padding: 30px !important;
+}
+
+.form-icon {
+  margin-bottom: 18px !important;
+}
+
+.welcome-content h1 {
+  line-height: 1.25 !important;
+  margin-bottom: 18px !important;
+}
+
+.welcome-description {
+  line-height: 1.8 !important;
+  margin-bottom: 24px !important;
+}
+
+.welcome-points {
+  gap: 12px !important;
+}
+
+.welcome-points > div {
+  padding: 14px 18px !important;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+.main-header {
+  box-sizing: border-box;
+  padding: 22px 28px !important;
+  gap: 18px !important;
+}
+
+.header-brand {
+  min-width: 0;
+  gap: 16px !important;
+}
+
+.header-user {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.tombol-musik {
+  z-index: 5;
+}
+
+/* DASHBOARD */
+.dashboard-welcome {
+  box-sizing: border-box;
+  padding: 36px !important;
+}
+
+.dashboard-welcome-text {
+  line-height: 1.8 !important;
+}
+
+.menu-grid {
+  gap: 20px !important;
+}
+
+.menu-card {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 28px !important;
+}
+
+.menu-icon {
+  margin-bottom: 20px !important;
+}
+
+.menu-card h3 {
+  line-height: 1.4 !important;
+  margin-bottom: 12px !important;
+}
+
+.menu-card p {
+  line-height: 1.75 !important;
+  margin-bottom: 18px !important;
+}
+
+/* MATERI */
+.material-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 4px;
+}
+
+.material-card {
+  width: 100%;
+  max-width: 100%;
+  padding: 30px !important;
+  overflow: hidden;
+}
+
+.material-heading {
+  gap: 16px !important;
+  margin-bottom: 22px !important;
+}
+
+.material-heading h2,
+.material-card h2,
+.material-card h3 {
+  line-height: 1.45 !important;
+  overflow-wrap: anywhere;
+}
+
+.material-card p {
+  line-height: 1.85 !important;
+  overflow-wrap: anywhere;
+}
+
+.formula-box {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  padding: 22px !important;
+  margin: 20px 0 !important;
+  overflow-wrap: anywhere;
+}
+
+.material-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* GAME */
+.game-start-card,
+.game-play-shell,
+.game-step-card,
+.game-result-card,
+.game-finish-card {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 28px !important;
+}
+
+.game-start-copy {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 26px !important;
+}
+
+.game-start-copy h1,
+.game-start-copy h2,
+.game-step-card h2,
+.game-result-card h2,
+.game-finish-card h2 {
+  line-height: 1.4 !important;
+  margin-bottom: 16px !important;
+  overflow-wrap: anywhere;
+}
+
+.game-start-copy p,
+.game-step-card p,
+.game-result-copy p {
+  line-height: 1.8 !important;
+}
+
+.game-howto {
+  gap: 14px !important;
+}
+
+.game-product-tile,
+.game-coupon,
+.game-answer {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 18px !important;
+}
+
+.game-product-tile p,
+.game-coupon p,
+.game-answer p {
+  line-height: 1.7 !important;
+  overflow-wrap: anywhere;
+}
+
+.game-math-panel {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 24px !important;
+  overflow-wrap: anywhere;
+}
+
+/* ASISTEN BELAJAR */
+.assistant-chat {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 26px !important;
+  gap: 18px;
+}
+
+.assistant-header {
+  display: flex;
+  align-items: center;
+  gap: 16px !important;
+  min-width: 0;
+}
+
+.assistant-header > div:last-child {
+  min-width: 0;
+}
+
+.assistant-title {
+  line-height: 1.45 !important;
+  margin-bottom: 8px !important;
+  overflow-wrap: anywhere;
+}
+
+.assistant-subtitle {
+  line-height: 1.7 !important;
+}
+
+.assistant-phase {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px 20px !important;
+  gap: 12px !important;
+  line-height: 1.6;
+}
+
+.assistant-log {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 22px !important;
+  gap: 18px !important;
+}
+
+.assistant-message {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 88% !important;
+  padding: 16px 20px !important;
+  line-height: 1.8 !important;
+  overflow-wrap: anywhere;
+}
+
+.assistant-message p {
+  line-height: 1.8 !important;
+  margin: 0 !important;
+}
+
+.assistant-sender {
+  margin-bottom: 10px !important;
+}
+
+.assistant-form {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  gap: 12px !important;
+}
+
+.assistant-input {
+  box-sizing: border-box;
+  min-width: 0;
+  flex: 1;
+  max-width: 100%;
+  padding: 16px !important;
+}
+
+.assistant-send {
+  box-sizing: border-box;
+  padding: 15px 22px !important;
+}
+
+.assistant-controls {
+  width: 100%;
+}
+
+.assistant-next {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* KONTAK DAN TOMBOL */
+.primary-button,
+.secondary-button,
+.back-button,
+.game-main-button,
+.game-secondary-button {
+  box-sizing: border-box;
+  max-width: 100%;
+  line-height: 1.65 !important;
+  padding: 15px 22px !important;
+  overflow-wrap: anywhere;
+}
+
+/* RESPONSIVE TABLET DAN HP */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 18px !important;
+    flex-wrap: wrap;
+  }
+
+  .dashboard-welcome,
+  .welcome-section,
+  .welcome-form-card,
+  .material-card,
+  .game-start-card,
+  .game-play-shell,
+  .game-step-card,
+  .game-result-card,
+  .game-finish-card,
+  .assistant-chat {
+    padding: 20px !important;
+  }
+
+  .menu-card {
+    padding: 22px !important;
+  }
+
+  .assistant-log {
+    padding: 15px !important;
+  }
+
+  .assistant-message {
+    max-width: 96% !important;
+  }
+
+  .game-start-copy {
+    padding: 18px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 14px !important;
+  }
+
+  .welcome-section,
+  .welcome-form-card,
+  .dashboard-welcome,
+  .material-card,
+  .game-start-card,
+  .game-play-shell,
+  .game-step-card,
+  .game-result-card,
+  .game-finish-card,
+  .assistant-chat {
+    padding: 16px !important;
+  }
+
+  .menu-card {
+    padding: 18px !important;
+  }
+
+  .assistant-log {
+    padding: 12px !important;
+  }
+
+  .assistant-message {
+    max-width: 100% !important;
+    padding: 14px !important;
+  }
+
+  .assistant-form {
+    flex-wrap: wrap;
+  }
+
+  .assistant-input,
+  .assistant-send {
+    width: 100%;
+    flex: none;
+  }
+
+  .game-start-copy {
+    padding: 14px !important;
+  }
+}
+
+/* ======================================
+   FINAL OVERRIDE - FONT DAN ANTI OVERFLOW
+   ====================================== */
+
+/* Font utama isi aplikasi */
+.material-content,
+.material-content p,
+.material-content span,
+.material-card p,
+.assistant-chat,
+.assistant-chat p,
+.assistant-chat span,
+.assistant-chat input,
+.game-section p,
+.game-section span,
+.game-section button {
+  font-family: 'Nunito', sans-serif !important;
+}
+
+/* Font untuk judul */
+.material-content h1,
+.material-content h2,
+.material-content h3,
+.material-card h1,
+.material-card h2,
+.material-card h3,
+.assistant-chat h1,
+.assistant-chat h2,
+.assistant-chat h3,
+.game-section h1,
+.game-section h2,
+.game-section h3 {
+  font-family: 'Fredoka', sans-serif !important;
+  line-height: 1.3 !important;
+  overflow-wrap: anywhere;
+}
+
+/* Semua elemen dalam kartu tidak boleh melewati batas */
+.material-content,
+.material-content *,
+.material-card,
+.material-card *,
+.assistant-chat,
+.assistant-chat *,
+.game-section,
+.game-section * {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* KARTU UTAMA MATERI */
+.material-content {
+  width: 100% !important;
+  padding: 28px !important;
+  overflow: hidden;
+}
+
+.material-content > h1 {
+  margin-top: 12px !important;
+  margin-bottom: 14px !important;
+}
+
+.material-content > p {
+  line-height: 1.8 !important;
+  margin-bottom: 20px !important;
+}
+
+/* KARTU MATERI BAGIAN DALAM */
+.material-card {
+  width: 100% !important;
+  padding: 26px !important;
+  margin-top: 20px !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+}
+
+.material-card p {
+  font-size: 15px !important;
+  line-height: 1.8 !important;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+
+.material-card h3 {
+  font-size: 21px !important;
+  margin-bottom: 14px !important;
+}
+
+/* KONTEN DAN RUMUS MATERI */
+.material-heading,
+.formula-box,
+.solution-steps,
+.solution-step {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-wrap: anywhere;
+}
+
+.formula-box {
+  padding: 20px !important;
+  border-radius: 18px !important;
+  overflow: hidden;
+}
+
+/* ASISTEN BELAJAR */
+.assistant-chat {
+  width: 100% !important;
+  padding: 24px !important;
+  margin: 0 !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+}
+
+.assistant-header {
+  display: flex;
+  align-items: center;
+  gap: 14px !important;
+  margin-bottom: 20px !important;
+}
+
+.assistant-icon {
+  flex-shrink: 0;
+}
+
+.assistant-title {
+  font-size: 21px !important;
+  line-height: 1.35 !important;
+  margin: 0 0 6px !important;
+}
+
+.assistant-subtitle {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+}
+
+.assistant-phase {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px 18px !important;
+  margin-bottom: 18px !important;
+  border-radius: 14px !important;
+  gap: 10px !important;
+}
+
+.assistant-log {
+  width: 100% !important;
+  padding: 18px !important;
+  margin-bottom: 18px !important;
+  border-radius: 18px !important;
+  overflow-x: hidden !important;
+}
+
+.assistant-message {
+  width: fit-content;
+  max-width: 88% !important;
+  padding: 15px 18px !important;
+  border-radius: 16px !important;
+  overflow-wrap: anywhere;
+}
+
+.assistant-message p {
+  font-size: 14px !important;
+  line-height: 1.75 !important;
+  margin: 6px 0 0 !important;
+}
+
+.assistant-sender {
+  display: block;
+  font-size: 12px !important;
+  margin-bottom: 5px !important;
+}
+
+.assistant-form {
+  display: flex;
+  align-items: stretch;
+  width: 100% !important;
+  gap: 10px !important;
+}
+
+.assistant-input {
+  flex: 1 1 auto;
+  width: 0;
+  min-width: 0 !important;
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 14px !important;
+  padding: 14px 16px !important;
+}
+
+.assistant-send {
+  flex: 0 0 auto;
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 14px !important;
+  padding: 12px 20px !important;
+}
+
+/* GAME */
+.game-start-card,
+.game-play-shell,
+.game-step-card,
+.game-result-card,
+.game-finish-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.game-start-copy,
+.game-result-copy {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.game-start-copy p,
+.game-result-copy p,
+.game-step-card p {
+  font-size: 15px !important;
+  line-height: 1.8 !important;
+}
+
+/* TOMBOL */
+.material-content button,
+.assistant-chat button,
+.game-section button {
+  font-family: 'Nunito', sans-serif !important;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* TAMPILAN LAYAR KECIL */
+@media (max-width: 768px) {
+  .material-content {
+    padding: 18px !important;
+  }
+
+  .material-card {
+    padding: 18px !important;
+  }
+
+  .assistant-chat {
+    padding: 16px !important;
+  }
+
+  .assistant-log {
+    padding: 12px !important;
+  }
+
+  .assistant-message {
+    max-width: 96% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .material-content {
+    padding: 14px !important;
+  }
+
+  .material-card {
+    padding: 14px !important;
+  }
+
+  .assistant-form {
+    flex-wrap: wrap;
+  }
+
+  .assistant-input,
+  .assistant-send {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+}
