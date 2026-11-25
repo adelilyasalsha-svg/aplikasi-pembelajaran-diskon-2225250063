@@ -1,8 +1,7 @@
-
 import { useState, useRef, useEffect } from 'react'
 import { supabase } from './supabase'
+import AsistenBelajar from './AsistenBelajar'
 import './App.css'
-
 
 
 const soal = [
@@ -171,7 +170,8 @@ function QuestionScreen({
   setJawaban,
   selesai,
   hasil,
-  kembali
+  kembali,
+  tampilkanAsisten = false
 }) {
   const [nomor, setNomor] = useState(0)
 
@@ -405,7 +405,7 @@ function QuestionScreen({
           </div>
         )}
 
-        <div className="quiz-navigation">
+                <div className="quiz-navigation">
           <button
             className="secondary-button"
             disabled={nomor === 0}
@@ -432,6 +432,17 @@ function QuestionScreen({
             </button>
           )}
         </div>
+
+        {tampilkanAsisten && (
+          <div className="material-card" style={{ marginTop: 24 }}>
+            <h3>Butuh Bantuan? 🤖</h3>
+            <p>
+              Tanyakan konsep atau langkah pengerjaan
+              yang belum kamu pahami.
+            </p>
+            <AsistenBelajar mode="latihan" />
+          </div>
+        )}
       </div>
     </div>
   )
@@ -1040,6 +1051,20 @@ const [hargaAkhirInput, setHargaAkhirInput] = useState('')
         <p>Jelajahi toko mini, pilih kupon, dan kumpulkan poin!</p>
         <span className="menu-arrow">Mainkan Game →</span>
       </button>
+
+<button
+  className="menu-card menu-purple"
+  onClick={() => setHalaman('asisten')}
+>
+  <span className="menu-icon">🤖</span>
+  <h3>Asisten Belajar AI</h3>
+  <p>
+    Belajar menyelesaikan masalah diskon dengan petunjuk
+    bertahap dari asisten AI.
+  </p>
+  <span className="menu-arrow">Mulai Belajar →</span>
+</button>
+
     </div>
   </section>
 )}
@@ -1379,6 +1404,15 @@ const [hargaAkhirInput, setHargaAkhirInput] = useState('')
     </div>
 
     <button className="primary-button" onClick={() => setHalaman('pretest')}>
+      <div className="material-card" style={{ marginTop: 24 }}>
+  <h3>Asisten Belajar Diskon 🤖</h3>
+  <p>
+    Masih bingung dengan materi diskon?
+    Tanyakan konsep, rumus, atau contoh perhitungan di sini.
+  </p>
+
+  <AsistenBelajar mode="belajar" />
+</div>
       Mulai Pretest →
     </button>
   </section>
@@ -1726,19 +1760,46 @@ const [hargaAkhirInput, setHargaAkhirInput] = useState('')
           />
         )}
 
-        {halaman === 'latihan' && (
-          <QuestionScreen
-            judul="Latihan"
-            deskripsi="Yuk, berlatih menghitung diskon!"
-            daftarSoal={soalLatihan}
-            jawaban={jawabanLatihan}
-            setJawaban={setJawabanLatihan}
-            hasil={nilaiLatihan}
-            selesai={(nilai) => setNilaiLatihan(nilai)}
-            kembali={() => setHalaman('dashboard')}
-          />
-        )}
+{halaman === 'latihan' && (
+  <QuestionScreen
+    judul="Latihan"
+    deskripsi="Yuk, berlatih menghitung diskon!"
+    daftarSoal={soalLatihan}
+    jawaban={jawabanLatihan}
+    setJawaban={setJawabanLatihan}
+    hasil={nilaiLatihan}
+    selesai={(nilai) => setNilaiLatihan(nilai)}
+    kembali={() => setHalaman('dashboard')}
+    tampilkanAsisten={true}
+  />
+)}
+{halaman === 'asisten' && (
+  <section className="material-section">
+    <button
+      className="back-button"
+      onClick={() => setHalaman('dashboard')}
+    >
+      ← Kembali ke Menu
+    </button>
 
+    <div className="material-content">
+      <p className="section-label">PEMBIMBING MATEMATIKA AI</p>
+
+      <h1>Asisten Belajar 🤖</h1>
+
+      <p className="material-intro">
+        Tanyakan apa saja tentang materi diskon.
+        Kamu bisa mengirim soal dari guru, meminta penjelasan
+        konsep, rumus, contoh, atau bantuan menghitung.
+        Asisten akan membimbingmu secara bertahap.
+      </p>
+
+      <div className="material-card">
+        <AsistenBelajar mode="belajar" />
+      </div>
+    </div>
+  </section>
+)}
         {halaman === 'posttest' && (
           <QuestionScreen
             judul="Posttest"

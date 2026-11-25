@@ -3857,3 +3857,1173 @@ body,
     gap: 10px;
   }
 }
+
+/* =================================
+   ASISTEN BELAJAR - TEMA LAVENDER
+================================= */
+
+.assistant-chat {
+  width: 100%;
+  max-width: 700px;
+  margin: 18px auto 0;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  color: #443263;
+  background: #FBF9FF;
+  border: 1px solid #E5D9F7;
+  border-radius: 22px;
+  box-shadow: 0 5px 18px rgba(112, 78, 160, 0.09);
+}
+
+.assistant-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+.assistant-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 25px;
+  background: #EDE3FC;
+  border-radius: 15px;
+}
+
+.assistant-title {
+  margin: 0 0 4px;
+  color: #6540A5;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.assistant-subtitle {
+  margin: 0;
+  color: #817493;
+  font-size: 13px;
+}
+
+.assistant-phase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 12px 15px;
+  background: #F0E9FC;
+  border: 1px solid #E3D7F7;
+  border-radius: 13px;
+  color: #76658F;
+  font-size: 13px;
+}
+
+.assistant-phase strong {
+  color: #7049AE;
+  font-weight: 800;
+}
+
+.assistant-log {
+  height: 350px;
+  overflow-y: auto;
+  padding: 15px;
+  background: #FFFFFF;
+  border: 1px solid #E6DDF2;
+  border-radius: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: #C9B4E8 #F8F4FC;
+}
+
+.assistant-message {
+  width: fit-content;
+  max-width: 85%;
+  margin: 9px 0;
+  padding: 11px 14px;
+  border-radius: 15px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.assistant-message p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+
+.assistant-sender {
+  font-size: 11px;
+  font-weight: 800;
+  opacity: 0.75;
+}
+
+.assistant-bot {
+  margin-right: auto;
+  color: #49376A;
+  background: #F0E9FC;
+  border-bottom-left-radius: 5px;
+}
+
+.assistant-user {
+  margin-left: auto;
+  color: #FFFFFF;
+  background: #9875CB;
+  border-bottom-right-radius: 5px;
+}
+
+.assistant-error {
+  margin: 10px 0;
+  padding: 10px 12px;
+  color: #A33B55;
+  background: #FFF0F2;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.assistant-form {
+  display: flex;
+  gap: 9px;
+  margin-top: 13px;
+}
+
+.assistant-input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 15px;
+  color: #443263;
+  background: #FFFFFF;
+  border: 1.5px solid #DCCCF2;
+  border-radius: 13px;
+  outline: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.assistant-input:focus {
+  border-color: #9875CB;
+  box-shadow: 0 0 0 3px rgba(152, 117, 203, 0.13);
+}
+
+.assistant-input:disabled {
+  background: #F5F1FA;
+}
+
+.assistant-send {
+  padding: 11px 20px;
+  color: #FFFFFF;
+  background: #8962BD;
+  border: none;
+  border-radius: 13px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.assistant-send:hover:not(:disabled) {
+  background: #7049A5;
+  transform: translateY(-1px);
+}
+
+.assistant-send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.assistant-controls {
+  display: flex;
+  margin-top: 12px;
+}
+
+.assistant-next {
+  width: 100%;
+  padding: 12px;
+  color: #7049A5;
+  background: #F5F0FC;
+  border: 1px solid #DCCCF2;
+  border-radius: 13px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.assistant-next:hover:not(:disabled) {
+  background: #EAE0F9;
+}
+
+.assistant-next:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 600px) {
+  .assistant-chat {
+    padding: 14px;
+    border-radius: 17px;
+  }
+
+  .assistant-title {
+    font-size: 17px;
+  }
+
+  .assistant-subtitle {
+    font-size: 12px;
+  }
+
+  .assistant-log {
+    height: 320px;
+    padding: 10px;
+  }
+
+  .assistant-message {
+    max-width: 92%;
+  }
+
+  .assistant-message p {
+    font-size: 13px;
+  }
+
+  .assistant-form {
+    gap: 6px;
+  }
+
+  .assistant-input {
+    padding: 11px;
+    font-size: 12px;
+  }
+
+  .assistant-send {
+    padding: 10px 13px;
+    font-size: 12px;
+  }
+}
+
+/* =====================================
+   PERBAIKAN LAYOUT ASISTEN BELAJAR
+===================================== */
+
+.assistant-chat,
+.assistant-chat * {
+  box-sizing: border-box;
+}
+
+.assistant-chat {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.assistant-header,
+.assistant-phase,
+.assistant-form,
+.assistant-controls {
+  width: 100%;
+  min-width: 0;
+}
+
+.assistant-header > div:last-child {
+  min-width: 0;
+}
+
+.assistant-title,
+.assistant-subtitle {
+  overflow-wrap: anywhere;
+}
+
+.assistant-log {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.assistant-message {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 85%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.assistant-message p {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.assistant-form {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.assistant-input {
+  display: block;
+  width: 0;
+  min-width: 0;
+  max-width: 100%;
+  flex: 1 1 auto;
+}
+
+.assistant-send {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.assistant-next {
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+}
+
+@media (max-width: 480px) {
+  .assistant-chat {
+    padding: 12px;
+  }
+
+  .assistant-message {
+    max-width: 94%;
+  }
+
+  .assistant-form {
+    gap: 6px;
+  }
+
+  .assistant-input {
+    font-size: 12px;
+  }
+
+  .assistant-send {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+/* ==========================================
+   FIX OVERFLOW: TEKS TETAP DI DALAM KOLOM
+========================================== */
+
+/* 1. Pastikan semua kontainer utama tidak melebar keluar layar */
+.main-header,
+.main-content,
+.welcome-section,
+.dashboard-section,
+.material-section,
+.quiz-container,
+.calculator-section,
+.result-section,
+.game-section {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.main-header,
+.main-content {
+  width: min(1160px, 92%);
+}
+
+/* 2. Perbaiki Grid Menu Dashboard agar kolom tidak melar */
+.menu-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  width: 100%;
+}
+
+.menu-card {
+  width: 100%;
+  min-width: 0 !important;
+  max-width: 100%;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.menu-card h3,
+.menu-card p,
+.menu-arrow {
+  width: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* 3. Perbaiki teks di Header & Identitas User */
+.header-brand,
+.header-user {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.header-brand h2,
+.header-brand p,
+.header-user span {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* 4. Perbaiki Kartu Materi, Kotak Rumus, & Pembahasan */
+.material-card,
+.material-content,
+.material-heading,
+.formula-box,
+.answer-feedback,
+.explanation-area {
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.material-heading h2 {
+  min-width: 0;
+  flex: 1;
+}
+
+/* 5. Perbaiki Kartu Kuis, Soal, & Pilihan Jawaban */
+.quiz-card,
+.answer-list,
+.answer-option {
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.answer-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.answer-option {
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.question-title,
+.quiz-card h2 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* 6. Perbaiki Tampilan Game & Hasil Akhir */
+.game-product-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+.game-coupon-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+.game-answer-grid,
+.result-summary {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.game-selected-product,
+.game-math-panel,
+.game-speech,
+.result-summary div {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* 7. Penyesuaian Layar Tablet & HP */
+@media (max-width: 900px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 750px) {
+  .game-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 550px) {
+  .menu-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .answer-list,
+  .game-answer-grid,
+  .result-summary {
+    grid-template-columns: 1fr !important;
+  }
+
+  .game-coupon-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* ==========================================================
+   FIX TAMPILAN FONT, TEKS DALAM KOLOM & KERAPIAN SELURUH MENU
+========================================================== */
+
+/* 1. Pastikan font Fredoka & Nunito selalu dipakai & tidak berbayang aneh */
+body,
+.app,
+button,
+input,
+select,
+textarea {
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  text-shadow: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+.header-brand h2,
+.welcome-content h1,
+.dashboard-welcome-text h1,
+.menu-card h3,
+.quiz-card > h2,
+.question-title,
+.assistant-title {
+  font-family: 'Fredoka', 'Nunito', sans-serif !important;
+  text-shadow: none !important;
+}
+
+/* 2. Rapikan Header & Brand agar tulisan tidak berbayang / melebar */
+.header-brand h2 {
+  color: #4b3275 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.2 !important;
+}
+
+.header-brand p {
+  font-family: 'Nunito', sans-serif !important;
+  font-size: 10px !important;
+  letter-spacing: 1.5px !important;
+  font-weight: 800 !important;
+  color: #877b9c !important;
+  text-shadow: none !important;
+}
+
+/* 3. Rapikan posisi tombol musik agar tidak menabrak konten halaman */
+.tombol-musik {
+  position: fixed !important;
+  top: 18px !important;
+  right: 18px !important;
+  z-index: 9999 !important;
+  padding: 8px 14px !important;
+  font-size: 12px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 12px rgba(80, 50, 140, 0.18) !important;
+}
+
+@media (max-width: 768px) {
+  .tombol-musik {
+    top: auto !important;
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+}
+
+/* 4. Kunci semua teks agar selalu berada di dalam kolom/kotak dengan padding aman */
+.welcome-section,
+.welcome-content,
+.welcome-form-card,
+.dashboard-section,
+.dashboard-welcome,
+.dashboard-welcome-text,
+.menu-grid,
+.menu-card,
+.material-section,
+.material-content,
+.material-card,
+.quiz-container,
+.quiz-card,
+.calculator-section,
+.assistant-chat,
+.assistant-header,
+.assistant-phase,
+.assistant-log,
+.assistant-message,
+.result-section,
+.result-card,
+.game-section {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.welcome-content h1,
+.welcome-content h1 span,
+.welcome-description,
+.dashboard-welcome-text h1,
+.dashboard-welcome-text p,
+.menu-card h3,
+.menu-card p,
+.menu-arrow,
+.material-card p,
+.material-card li,
+.question-title,
+.answer-option,
+.assistant-title,
+.assistant-subtitle,
+.assistant-message p {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  white-space: normal !important;
+}
+
+/* Khusus pesan chat asisten biarkan baris baru (\n) tetap terjaga */
+.assistant-message p {
+  white-space: pre-line !important;
+}
+
+/* 5. Beri jarak aman di dalam kartu & banner agar teks tidak mepet pinggir */
+.dashboard-welcome {
+  padding: 32px 36px !important;
+  overflow: hidden !important;
+}
+
+.menu-card {
+  padding: 22px !important;
+  overflow: hidden !important;
+}
+
+.material-card,
+.quiz-card,
+.welcome-form-card {
+  padding: 26px !important;
+  overflow: hidden !important;
+}
+
+.assistant-chat {
+  padding: 22px !important;
+  margin-top: 20px !important;
+  overflow: hidden !important;
+}
+
+.assistant-phase {
+  padding: 12px 16px !important;
+  gap: 10px !important;
+}
+
+.assistant-log {
+  padding: 16px !important;
+}
+
+.assistant-message {
+  max-width: 85% !important;
+  padding: 12px 15px !important;
+}
+
+/* 6. Perbaikan responsif layar kecil (HP / split screen browser) */
+@media (max-width: 768px) {
+  .dashboard-welcome,
+  .material-card,
+  .quiz-card,
+  .welcome-form-card,
+  .assistant-chat {
+    padding: 18px !important;
+  }
+
+  .assistant-message {
+    max-width: 92% !important;
+  }
+}
+
+/* =========================================
+   PERBAIKAN JARAK DAN PADDING SELURUH APLIKASI
+   Tema, ukuran kartu, dan susunan menu tetap
+========================================= */
+
+/* LOGIN */
+.welcome-form-card {
+  padding: 30px !important;
+}
+
+.form-icon {
+  margin-bottom: 18px !important;
+}
+
+.welcome-form-card .form-overline {
+  margin-bottom: 10px !important;
+}
+
+.welcome-form-card h2 {
+  margin-bottom: 12px !important;
+}
+
+.welcome-form-card .form-description {
+  margin-bottom: 24px !important;
+}
+
+.welcome-form-card .form-group {
+  margin-bottom: 20px !important;
+}
+
+.welcome-form-card label {
+  display: block;
+  margin-bottom: 9px !important;
+}
+
+.welcome-form-card input {
+  padding: 14px 16px !important;
+}
+
+.welcome-note {
+  margin-top: 22px !important;
+  padding: 13px 15px !important;
+}
+
+/* DASHBOARD */
+.dashboard-welcome {
+  padding: 34px 38px !important;
+}
+
+.dashboard-welcome-text h1 {
+  margin-bottom: 12px !important;
+}
+
+.dashboard-welcome-text p {
+  line-height: 1.7;
+}
+
+.menu-card {
+  padding: 25px !important;
+  gap: 12px;
+}
+
+.menu-card .menu-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.menu-card h3 {
+  margin: 5px 0 !important;
+  line-height: 1.35;
+}
+
+.menu-card p {
+  margin: 0 0 8px !important;
+  line-height: 1.65;
+}
+
+.menu-card .menu-arrow {
+  margin-top: 5px;
+}
+
+/* HEADER */
+.header-brand {
+  gap: 14px;
+}
+
+.brand-icon {
+  flex-shrink: 0;
+}
+
+/* MATERI DAN KALKULATOR */
+.material-content {
+  padding-top: 10px;
+}
+
+.material-card {
+  padding: 28px !important;
+  margin-bottom: 22px;
+}
+
+.material-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px !important;
+}
+
+.material-heading .material-icon {
+  flex-shrink: 0;
+}
+
+.material-card h2 {
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.material-card h3 {
+  margin-top: 22px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.material-card p {
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.material-card ul {
+  padding-left: 25px;
+  margin: 12px 0 18px;
+}
+
+.material-card li {
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.formula-box {
+  padding: 17px 20px !important;
+  margin: 16px 0 !important;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* LATIHAN, PRETEST, DAN POSTTEST */
+.quiz-card {
+  padding: 30px !important;
+}
+
+.quiz-card > h2 {
+  line-height: 1.45;
+  margin-bottom: 22px;
+}
+
+.quiz-progress {
+  margin: 22px 0;
+}
+
+.question-illustration {
+  padding: 18px !important;
+  margin: 22px 0 !important;
+}
+
+.question-illustration span {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.question-title {
+  line-height: 1.65;
+  margin: 20px 0 !important;
+}
+
+.answer-list {
+  gap: 14px !important;
+  margin: 20px 0 !important;
+}
+
+.answer-option {
+  padding: 16px 18px !important;
+  line-height: 1.5;
+  gap: 12px;
+}
+
+.answer-feedback {
+  padding: 22px !important;
+  margin-top: 22px !important;
+}
+
+.explanation-area {
+  padding: 18px !important;
+  margin-top: 18px !important;
+}
+
+.explanation-heading {
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.solution-steps {
+  gap: 14px;
+}
+
+.solution-step {
+  gap: 14px;
+  padding: 14px !important;
+}
+
+.step-content {
+  min-width: 0;
+}
+
+.step-content p {
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.quiz-navigation {
+  gap: 14px;
+  margin-top: 25px;
+}
+
+/* HASIL DAN EVALUASI */
+.result-card {
+  padding: 30px !important;
+}
+
+.result-summary {
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.result-summary > div {
+  padding: 17px !important;
+}
+
+.review-list {
+  margin-top: 28px;
+}
+
+.review-list > h2 {
+  margin-bottom: 20px;
+}
+
+/* GAME */
+.game-start-card,
+.game-play-shell,
+.game-step-card,
+.game-result-card,
+.game-finish-card {
+  box-sizing: border-box;
+}
+
+.game-start-copy {
+  padding: 24px;
+}
+
+.game-howto {
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.game-product-tile {
+  padding: 18px !important;
+  gap: 10px;
+}
+
+.game-product-tile img {
+  margin-bottom: 8px;
+}
+
+.game-step-card,
+.game-result-card,
+.game-finish-card {
+  padding: 28px !important;
+}
+
+.game-selected-product {
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.game-coupon {
+  padding: 20px !important;
+}
+
+.game-math-panel {
+  padding: 22px !important;
+  margin-top: 22px;
+}
+
+.game-answer {
+  padding: 15px !important;
+}
+
+.game-result-copy {
+  padding: 12px;
+}
+
+.game-finish-actions {
+  gap: 14px;
+  margin-top: 22px;
+}
+
+/* ASISTEN BELAJAR AI */
+.assistant-chat {
+  padding: 26px !important;
+  margin-top: 22px !important;
+  box-sizing: border-box;
+}
+
+.assistant-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px !important;
+}
+
+.assistant-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.assistant-title {
+  line-height: 1.4;
+  margin-bottom: 7px !important;
+}
+
+.assistant-subtitle {
+  line-height: 1.6;
+}
+
+.assistant-phase {
+  padding: 15px 18px !important;
+  margin-bottom: 20px !important;
+  gap: 12px !important;
+  line-height: 1.5;
+}
+
+.assistant-log {
+  padding: 20px !important;
+  gap: 16px;
+}
+
+.assistant-message {
+  box-sizing: border-box;
+  max-width: 85%;
+  padding: 15px 18px !important;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.assistant-sender {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.assistant-message p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.assistant-form {
+  gap: 12px;
+  margin-top: 18px !important;
+}
+
+.assistant-input {
+  min-width: 0;
+  padding: 14px 16px !important;
+}
+
+.assistant-send {
+  padding: 13px 20px !important;
+  flex-shrink: 0;
+}
+
+.assistant-controls {
+  margin-top: 16px !important;
+}
+
+.assistant-next {
+  padding: 13px 18px !important;
+}
+
+.assistant-error {
+  padding: 12px 15px;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* TOMBOL DAN KONTEN UMUM */
+.primary-button,
+.secondary-button,
+.back-button {
+  line-height: 1.5;
+}
+
+.main-content {
+  box-sizing: border-box;
+}
+
+.main-content p {
+  overflow-wrap: break-word;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .welcome-form-card,
+  .dashboard-welcome,
+  .material-card,
+  .quiz-card,
+  .result-card,
+  .game-step-card,
+  .game-result-card,
+  .game-finish-card,
+  .assistant-chat {
+    padding: 20px !important;
+  }
+
+  .menu-card {
+    padding: 20px !important;
+  }
+
+  .assistant-message {
+    max-width: 94%;
+    padding: 13px 15px !important;
+  }
+
+  .assistant-log {
+    padding: 13px !important;
+  }
+
+  .assistant-header {
+    gap: 12px;
+  }
+
+  .game-start-copy {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-form-card,
+  .material-card,
+  .quiz-card,
+  .result-card,
+  .assistant-chat {
+    padding: 17px !important;
+  }
+
+  .menu-card {
+    padding: 18px !important;
+  }
+
+  .assistant-form {
+    flex-wrap: wrap;
+  }
+
+  .assistant-input {
+    width: 100%;
+  }
+
+  .assistant-send {
+    width: 100%;
+  }
+
+  .assistant-message {
+    max-width: 100%;
+  }
+
+  .material-heading {
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
