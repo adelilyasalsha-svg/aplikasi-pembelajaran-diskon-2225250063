@@ -5712,3 +5712,32 @@ h3,
     flex: 1 1 100%;
   }
 }
+/* Memperbaiki warna chat pengguna */
+.assistant-chat .assistant-message.assistant-user {
+  background-color: #7541b8 !important;
+  color: #ffffff !important;
+  text-align: left !important;
+}
+
+.assistant-chat .assistant-message.assistant-user p,
+.assistant-chat .assistant-message.assistant-user span {
+  color: #ffffff !important;
+  text-align: left !important;
+}
+
+/* Memperbaiki warna chat asisten */
+.assistant-chat .assistant-message.assistant-bot {
+  background-color: #f0e9fc !important;
+  color: #514366 !important;
+  text-align: left !important;
+}
+
+.assistant-chat .assistant-message.assistant-bot p {
+  color: #514366 !important;
+  text-align: left !important;
+}
+
+/* Indikator sedang berpikir */
+.assistant-chat .assistant-message.assistant-bot {
+  align-self: flex-start !important;
+}

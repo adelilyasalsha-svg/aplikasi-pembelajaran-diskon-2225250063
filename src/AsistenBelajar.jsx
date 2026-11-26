@@ -192,18 +192,29 @@ export default function AsistenBelajar({ mode = "belajar" }) {
               backgroundColor: "#f0e9fc",
               color: "#514366",
               textAlign: "left",
+              boxSizing: "border-box",
             }}
           >
             <span
               style={{
+                display: "block",
+                alignSelf: "flex-start",
                 marginBottom: "6px",
                 color: "#7652a5",
                 fontWeight: 700,
+                fontSize: "0.82rem",
               }}
             >
               Asisten
             </span>
-            <p style={{ margin: 0 }}>
+
+            <p
+              style={{
+                margin: 0,
+                color: "#514366",
+                textAlign: "left",
+              }}
+            >
               Sedang berpikir...
             </p>
           </div>

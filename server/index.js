@@ -7,7 +7,6 @@ import express from "express";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
 
-
 import {
   buildSystemPrompt,
   DEFAULT_STUDENT_PROFILE,
@@ -38,9 +37,9 @@ app.use(express.json({ limit: "20kb" }));
 
 app.use(
   cors({
-    origin: ALLOWED_ORIGINS.split(",")
-      .map((s) => s.trim())
-      .filter(Boolean),
+    origin: ALLOWED_ORIGINS
+      ? ALLOWED_ORIGINS.split(",").map((s) => s.trim()).filter(Boolean)
+      : true,
   })
 );
 
@@ -55,6 +54,9 @@ app.use(
 const FALLBACK =
   "Coba kita pelan-pelan. Dari soal tersebut, informasi apa yang sudah kamu ketahui?";
 
+// Jeda sebelum mencoba ulang
+const sleep = (ms) =>
+  new Promise((resolve) => setTimeout(resolve, ms));
 
 async function askGemini(messages) {
   const systemMessage = messages.find(
@@ -68,63 +70,113 @@ async function askGemini(messages) {
       parts: [{ text: message.content }],
     }));
 
-  const controller = new AbortController();
-
-  const timeout = setTimeout(() => {
-    controller.abort();
-  }, 25000);
-
-  try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-goog-api-key": GEMINI_API_KEY,
-        },
-        signal: controller.signal,
-        body: JSON.stringify({
-          systemInstruction: {
-            parts: [
-              {
-                text: systemMessage?.content || "",
-              },
-            ],
-          },
-          contents: history,
-          generationConfig: {
-            temperature: 0.3,
-            maxOutputTokens: 450,
-            responseMimeType: "application/json",
-          },
-        }),
-      }
-    );
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      console.error("Gemini API error:", response.status, data);
-      throw new Error(`Gemini ${response.status}`);
-    }
-
-    return (
-      data.candidates?.[0]?.content?.parts
-        ?.map((part) => part.text || "")
-        .join("") || ""
-    );
-  } catch (error) {
-    if (error.name === "AbortError") {
-      throw new Error("Waktu tunggu Gemini habis (25 detik).");
-    }
-
-    throw error;
-  } finally {
-    clearTimeout(timeout);
+  if (!history.length || history[0].role !== "user") {
+    throw new Error("Riwayat percakapan tidak valid.");
   }
-}
 
+  const maxAttempts = 3;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    const controller = new AbortController();
+
+    const timeout = setTimeout(() => {
+      controller.abort();
+    }, 30000);
+
+    try {
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-goog-api-key": GEMINI_API_KEY,
+          },
+          signal: controller.signal,
+          body: JSON.stringify({
+            systemInstruction: {
+              parts: [{ text: systemMessage?.content || "" }],
+            },
+            contents: history,
+            generationConfig: {
+              temperature: 0.3,
+              maxOutputTokens: 450,
+              responseMimeType: "application/json",
+            },
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        const status = response.status;
+
+        console.error(
+          `Gemini API error (percobaan ${attempt}/${maxAttempts}):`,
+          status,
+          data
+        );
+
+        // Ulangi jika server Gemini sedang sibuk
+        if (
+          [429, 500, 502, 503, 504].includes(status) &&
+          attempt < maxAttempts
+        ) {
+          const delay = 1500 * Math.pow(2, attempt - 1);
+
+          console.log(
+            `Mencoba kembali dalam ${delay / 1000} detik...`
+          );
+
+          await sleep(delay);
+          continue;
+        }
+
+        throw new Error(
+          data.error?.message || `Gemini HTTP ${status}`
+        );
+      }
+
+      const reply = data.candidates?.[0]?.content?.parts
+        ?.map((part) => part.text || "")
+        .join("");
+
+      if (!reply) {
+        console.error("Jawaban Gemini kosong:", data);
+        throw new Error("Jawaban Gemini kosong.");
+      }
+
+      return reply;
+    } catch (error) {
+      const retryable =
+        error.name === "AbortError" ||
+        error.cause?.code === "ECONNRESET" ||
+        error.cause?.code === "ETIMEDOUT";
+
+      if (retryable && attempt < maxAttempts) {
+        const delay = 1500 * Math.pow(2, attempt - 1);
+
+        console.log(
+          `Koneksi bermasalah. Mencoba kembali dalam ${delay / 1000} detik...`
+        );
+
+        await sleep(delay);
+        continue;
+      }
+
+      if (error.name === "AbortError") {
+        throw new Error("Waktu tunggu Gemini habis.");
+      }
+
+      throw error;
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
+  throw new Error("Gemini gagal setelah beberapa percobaan.");
+}
 
 app.post("/api/chat", async (req, res) => {
   try {
@@ -135,30 +187,47 @@ app.post("/api/chat", async (req, res) => {
       mode = "belajar",
     } = req.body ?? {};
 
-    if (
-      !Array.isArray(messages) ||
-      messages.length === 0 ||
-      messages.length > 30
-    ) {
+    if (!Array.isArray(messages) || messages.length === 0) {
       return res.status(400).json({
         error: "Format pesan tidak valid.",
       });
     }
 
-    const history = messages
-      .filter(
-        (message) =>
-          ["user", "assistant"].includes(message?.role) &&
-          typeof message.content === "string"
-      )
-      .map((message) => ({
-        role: message.role,
-        content: message.content.slice(0, 1000),
-      }));
+    const history = [];
 
-    if (history.length === 0) {
+    for (const message of messages) {
+      if (
+        !["user", "assistant"].includes(message?.role) ||
+        typeof message.content !== "string"
+      ) {
+        continue;
+      }
+
+      const content = message.content.trim().slice(0, 1000);
+
+      if (!content) continue;
+
+      const role = message.role;
+
+      if (history.length === 0 && role !== "user") {
+        continue;
+      }
+
+      const lastMessage = history[history.length - 1];
+
+      if (lastMessage && lastMessage.role === role) {
+        lastMessage.content += "\n" + content;
+      } else {
+        history.push({ role, content });
+      }
+    }
+
+    if (
+      history.length === 0 ||
+      history[history.length - 1].role !== "user"
+    ) {
       return res.status(400).json({
-        error: "Pesan siswa tidak ditemukan.",
+        error: "Pesan terakhir harus berasal dari siswa.",
       });
     }
 
@@ -191,30 +260,29 @@ app.post("/api/chat", async (req, res) => {
     let result;
 
     try {
-  result = JSON.parse(rawReply);
-} catch (error) {
-  console.error("Gagal membaca JSON Gemini:", rawReply);
+      result = JSON.parse(rawReply);
+    } catch {
+      console.error("Format JSON Gemini tidak valid:", rawReply);
 
-  result = {
-    reply: FALLBACK,
-    difficultyDetected: false,
-  };
-}
+      result = {
+        reply: rawReply,
+        difficultyDetected: false,
+      };
+    }
+
     const reply =
-      typeof result.reply === "string" &&
-      result.reply.trim()
+      typeof result.reply === "string" && result.reply.trim()
         ? result.reply.trim()
         : FALLBACK;
 
-    res.json({
+    return res.json({
       reply,
-      difficultyDetected:
-        result.difficultyDetected === true,
+      difficultyDetected: result.difficultyDetected === true,
     });
   } catch (error) {
     console.error("Kesalahan chatbot:", error.message);
 
-    res.status(502).json({
+    return res.status(502).json({
       error: "Asisten sedang tidak tersedia. Coba lagi sebentar.",
     });
   }

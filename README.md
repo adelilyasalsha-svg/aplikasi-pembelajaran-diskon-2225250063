@@ -1,68 +1,134 @@
-# Aplikasi Pembelajaran Matematika: Diskon
+# Aplikasi Pembelajaran Diskon Berbasis AI
 
-Aplikasi Pembelajaran Matematika: Diskon merupakan media pembelajaran berbasis web yang dirancang untuk membantu siswa memahami materi diskon dalam kehidupan sehari-hari.
+Aplikasi Pembelajaran Diskon Berbasis AI merupakan media pembelajaran interaktif yang dirancang untuk membantu siswa SMP memahami materi diskon dalam aritmetika sosial. Aplikasi ini dilengkapi dengan Asisten Belajar AI yang dapat memberikan penjelasan, petunjuk, dan bimbingan penyelesaian soal secara bertahap.
 
-Aplikasi ini menyediakan materi pembelajaran, pretest, latihan soal, posttest, dan evaluasi hasil belajar agar siswa dapat memahami konsep diskon serta mengukur perkembangan belajarnya.
+## 🎯 Tujuan Pengembangan
 
-## Fitur Aplikasi
+Aplikasi ini dikembangkan untuk:
+- Membantu siswa memahami konsep diskon.
+- Meningkatkan kemampuan siswa dalam menyelesaikan masalah matematika sehari-hari.
+- Memberikan pengalaman belajar yang interaktif dan mudah dipahami.
+- Membantu siswa belajar secara mandiri melalui bimbingan AI.
 
-1. **Materi Pembelajaran**  
-   Berisi penjelasan tentang pengertian diskon, rumus diskon, dan contoh penerapannya.
+## ✨ Fitur Aplikasi
 
-2. **Pretest**  
-   Digunakan untuk mengetahui pemahaman awal siswa sebelum mempelajari materi.
+1. **Materi Pembelajaran Diskon**  
+   Membantu siswa mempelajari konsep dan perhitungan diskon.
 
-3. **Latihan Soal**  
-   Memberikan kesempatan kepada siswa untuk menguji pemahaman melalui soal latihan.
+2. **Asisten Belajar AI**  
+   Menyediakan layanan tanya jawab mengenai materi diskon menggunakan AI.
 
-4. **Posttest**  
-   Digunakan untuk mengukur pemahaman siswa setelah mempelajari materi.
+3. **Bimbingan Bertahap**  
+   Membantu siswa memahami masalah, membangun konsep, serta menerapkan dan memeriksa hasil perhitungan.
 
-5. **Evaluasi**  
-   Menampilkan rekap nilai dan perkembangan hasil belajar siswa.
+4. **Tahapan Pembelajaran**  
+   Terdiri dari tiga fase:
+   - Fase 1: Pahami Masalah.
+   - Fase 2: Bangun Konsep.
+   - Fase 3: Terapkan dan Periksa.
 
-6. **Penyimpanan Hasil Belajar**  
-   Menggunakan Supabase untuk menyimpan hasil belajar siswa.
+5. **Mode Belajar dan Latihan**  
+   Mendukung kegiatan belajar melalui penjelasan konsep dan petunjuk penyelesaian soal.
 
-## Teknologi yang Digunakan
+## 🧠 Pendekatan Pembelajaran
 
-- React.js
+Pengembangan aplikasi ini menggunakan dua landasan pembelajaran:
+
+- **Reciprocal Mediation Theory (RMT)** dari Kinard dan Kozulin (2008), sebagai pendekatan untuk membimbing proses berpikir siswa melalui tahapan pembelajaran.
+- **Cognitive Load Theory**, untuk membantu mengatur beban kognitif siswa melalui penyajian materi dan petunjuk secara bertahap.
+
+## 🛠️ Teknologi yang Digunakan
+
+- React
 - Vite
-- CSS
 - JavaScript
-- Supabase
+- Node.js
+- Express.js
+- Google Gemini API
+- CSS
 
-## Cara Menjalankan Aplikasi
+## 📁 Struktur Proyek
 
-1. Clone repository ini.
-2. Masuk ke folder proyek.
-3. Instal dependensi:
+```text
+aplikasi-pembelajaran-diskon-2225250063/
+│
+├── public/
+├── src/
+│   ├── AsistenBelajar.jsx
+│   └── ...
+│
+├── server/
+│   ├── index.js
+│   ├── prompt.js
+│   └── .env
+│
+├── index.html
+├── package.json
+├── .gitignore
+└── README.md
+```
 
-   ```bash
-   npm install
-   ```
+## ⚙️ Cara Menjalankan Aplikasi
 
-4. Buat file `.env` di folder utama dan isi konfigurasi Supabase:
+### 1. Clone Repository
 
-   ```env
-   VITE_SUPABASE_URL=URL_SUPABASE_KAMU
-   VITE_SUPABASE_ANON_KEY=KEY_SUPABASE_KAMU
-   ```
+```bash
+git clone https://github.com/adelilyasalsha-svg/aplikasi-pembelajaran-diskon-2225250063.git
+```
 
-5. Jalankan aplikasi:
+### 2. Masuk ke Folder Proyek
 
-   ```bash
-   npm run dev
-   ```
+```bash
+cd aplikasi-pembelajaran-diskon-2225250063
+```
 
-6. Buka alamat lokal yang muncul di terminal.
+### 3. Instal Dependensi
 
-## Tujuan Pengembangan
+```bash
+npm install
+```
 
-Aplikasi ini dikembangkan sebagai media pembelajaran matematika untuk membantu siswa memahami konsep diskon secara lebih interaktif, menarik, dan mudah dipahami.
+### 4. Atur API Key Gemini
+
+Buat file `.env` di dalam folder `server`, kemudian isi dengan:
+
+```env
+GEMINI_API_KEY=isi_api_key_milikmu
+GEMINI_MODEL=gemini-3.5-flash-lite
+```
+
+Ganti `isi_api_key_milikmu` dengan API Key Gemini milik sendiri.
+
+**Penting:** Jangan mengunggah file `.env` atau membagikan API Key ke publik.
+
+### 5. Jalankan Backend
+
+Buka terminal dan jalankan:
+
+```bash
+node server/index.js
+```
+
+### 6. Jalankan Frontend
+
+Buka terminal baru, kemudian jalankan:
+
+```bash
+npm run dev
+```
+
+Buka alamat lokal yang ditampilkan oleh Vite di browser.
+
+## 🔐 Keamanan
+
+API Key Gemini disimpan pada sisi backend melalui file `.env` agar tidak ditampilkan secara langsung pada kode frontend maupun repository GitHub.
+
+## 👩‍💻 Pengembang
+
+**Adelilya Salsha**
+
+Proyek ini dikembangkan sebagai aplikasi pembelajaran matematika pada materi diskon dalam aritmetika sosial.
 
 ---
 
-**Nama:** Adelilya Salsha  
-**NIM:** 2225250063  
-**Kelas:** 3B
+*Dikembangkan untuk mendukung pembelajaran matematika yang interaktif, bertahap, dan mudah dipahami siswa.*
