@@ -28,7 +28,9 @@ export default function AsistenBelajar({ mode = "belajar" }) {
   const endRef = useRef(null);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth" });
+    endRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
   }, [msgs, loading]);
 
   async function sendMessage(message) {
@@ -91,10 +93,13 @@ export default function AsistenBelajar({ mode = "belajar" }) {
 
   return (
     <section className="assistant-chat" aria-label="Asisten Belajar">
+
       <div className="assistant-header">
         <div className="assistant-icon">🤖</div>
         <div>
-          <h3 className="assistant-title">Asisten Belajar Diskon</h3>
+          <h3 className="assistant-title">
+            Asisten Belajar Diskon
+          </h3>
           <p className="assistant-subtitle">
             Teman belajar untuk memahami materi diskon
           </p>
@@ -106,27 +111,101 @@ export default function AsistenBelajar({ mode = "belajar" }) {
         <strong>{FASE[phase]}</strong>
       </div>
 
-      <div className="assistant-log" role="log" aria-live="polite">
-        {msgs.map((message, index) => (
-          <div
-            key={index}
-            className={`assistant-message ${
-              message.role === "user"
-                ? "assistant-user"
-                : "assistant-bot"
-            }`}
-          >
-            <span className="assistant-sender">
-              {message.role === "user" ? "Kamu" : "Asisten"}
-            </span>
-            <p>{message.content}</p>
-          </div>
-        ))}
+      <div
+        className="assistant-log"
+        role="log"
+        aria-live="polite"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "stretch",
+          gap: "18px",
+          textAlign: "left",
+        }}
+      >
+        {msgs.map((message, index) => {
+          const isUser = message.role === "user";
+
+          return (
+            <div
+              key={index}
+              className={`assistant-message ${
+                isUser ? "assistant-user" : "assistant-bot"
+              }`}
+              style={{
+                alignSelf: isUser ? "flex-end" : "flex-start",
+                display: "flex",
+                flexDirection: "column",
+                width: "fit-content",
+                maxWidth: "78%",
+                padding: "12px 16px",
+                borderRadius: "18px",
+                backgroundColor: isUser ? "#7541b8" : "#f0e9fc",
+                color: isUser ? "#ffffff" : "#514366",
+                textAlign: "left",
+                boxSizing: "border-box",
+                overflowWrap: "anywhere",
+              }}
+            >
+              <span
+                className="assistant-sender"
+                style={{
+                  display: "block",
+                  alignSelf: isUser ? "flex-end" : "flex-start",
+                  marginBottom: "6px",
+                  color: isUser ? "#ffffff" : "#7652a5",
+                  fontWeight: 700,
+                  fontSize: "0.82rem",
+                }}
+              >
+                {isUser ? "Kamu" : "Asisten"}
+              </span>
+
+              <p
+                style={{
+                  margin: 0,
+                  color: "inherit",
+                  fontSize: "0.95rem",
+                  lineHeight: 1.6,
+                  textAlign: "left",
+                  whiteSpace: "pre-wrap",
+                  overflowWrap: "anywhere",
+                }}
+              >
+                {message.content}
+              </p>
+            </div>
+          );
+        })}
 
         {loading && (
-          <div className="assistant-message assistant-bot">
-            <span className="assistant-sender">Asisten</span>
-            <p>Sedang berpikir...</p>
+          <div
+            className="assistant-message assistant-bot"
+            style={{
+              alignSelf: "flex-start",
+              display: "flex",
+              flexDirection: "column",
+              width: "fit-content",
+              maxWidth: "78%",
+              padding: "12px 16px",
+              borderRadius: "18px",
+              backgroundColor: "#f0e9fc",
+              color: "#514366",
+              textAlign: "left",
+            }}
+          >
+            <span
+              style={{
+                marginBottom: "6px",
+                color: "#7652a5",
+                fontWeight: 700,
+              }}
+            >
+              Asisten
+            </span>
+            <p style={{ margin: 0 }}>
+              Sedang berpikir...
+            </p>
           </div>
         )}
 
@@ -168,6 +247,7 @@ export default function AsistenBelajar({ mode = "belajar" }) {
           Lanjut Tahap Berikutnya →
         </button>
       </div>
+
     </section>
   );
 }
