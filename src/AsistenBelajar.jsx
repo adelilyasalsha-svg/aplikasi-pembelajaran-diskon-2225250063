@@ -1,7 +1,9 @@
 
 import { useState, useRef, useEffect } from "react";
 
-const API = import.meta.env.VITE_API_URL ?? "http://localhost:3001";
+const API = import.meta.env.DEV
+  ? "http://localhost:3001"
+  : "";
 
 const FASE = {
   1: "Pahami masalah",
